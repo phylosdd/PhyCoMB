@@ -1,0 +1,14 @@
+set seed/make reproducible for mclapply
+    setKXH setMWL
+    https://cran.r-project.org/web/packages/doRNG/index.html
+        see vignette, %dorng%
+or just use lapply
+
+may not be totally consistent with min 10 tips vs min 10% of tips
+    compare use of neutral.trait() with make.char() in prev code
+    doesn't affect the trees generated so far, though
+
+probably could clean up the adj in all those plot.trees()
+
+probably move files of empirical outside of testing sets
+    store altogether somewhere
