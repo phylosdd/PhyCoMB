@@ -26,18 +26,24 @@ require.both.states <- function(p, N = 1)
 }
 
 #' Simulate a neutral binary trait on a given tree
-neutral.trait <- function(phy, qval, thresh = 0.10)
+neutral.trait <- function(phy, qval, thresh = 0.10, x0 = 0)
 {
     st <- -1
 
-    # require at least "thresh" of each state
+    # if only one transition rate is provided, assume symmetric transitions
+    if (length(qval) == 1)
+        qval <- rep(qval, 2)
+
+    # require at least "thresh" of each state;
+    #    "thresh" can be a proportion or a number of tips
+    # x0 is the root state; diversitree's default is 0
     if (thresh < 1)
     {
         while(length(table(st)) < 2 | any(table(st) / Ntip(phy) < thresh))
-            st <- sim.character(phy, rep(qval, 2), model="mk2")
+            st <- sim.character(phy, qval, model="mk2", x0=x0)
     } else {
         while(length(table(st)) < 2 | any(table(st) < thresh))
-            st <- sim.character(phy, rep(qval, 2), model="mk2")
+            st <- sim.character(phy, qval, model="mk2", x0=x0)
     }
 
     return(st)
