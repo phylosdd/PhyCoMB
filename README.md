@@ -1,7 +1,7 @@
 # PhyCoMB: Phylogenetic Comparative Methods Benchmarking
 
 The goal of PhyCoMB is to facilitate robustness testing of phylogenetic comparative methods.
-The aim is to accumulate and curate testing datasets that are specifically intended to challenge methods for inferring trait evolution and lineage diversification from phylogenies.
+It will accumulate and curate testing datasets that are specifically intended to challenge methods for inferring trait evolution and lineage diversification from phylogenies.
 
 ## Why benchmarking?
 
@@ -20,9 +20,9 @@ Phylogenetic comparative methods could benefit from them, too.
 
 ## How far along is this project?
 
-It's not very developed yet, but it's at least off the ground.
-A grant proposal to support PhyCoMB is under review.
-A first suite of tests has been employed in a manuscript introducing a new method of state-dependent diversification.
+Well, it's at least off the ground.
+A grant proposal to support PhyCoMB has been recommended for funding by NSF.
+A first suite of tests has been employed in a manuscript introducing a new method of state-dependent diversification (FISSE, Rabosky & Goldberg, in review at Evolution).
 
 If you're interested in contributing, please speak up!
 
