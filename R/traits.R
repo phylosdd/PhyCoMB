@@ -16,6 +16,20 @@ discretize.states <- function(p)
     return(p)
 }
 
+#' Convert from multi-state to binary
+multi.to.binary.states <- function(p, n.states)
+{
+    s01 <- p$tip.state * NA
+    s01[which(p$tip.state <= n.states/2)] <- 0
+    s01[which(p$tip.state > n.states/2)] <- 1
+    p$tip.state <- s01
+
+    # history causes plotting trouble
+    p$hist <- NULL
+
+    return(p)
+}
+
 #' Require at least N tips of both states
 require.both.states <- function(p, N = 1)
 {
@@ -26,7 +40,7 @@ require.both.states <- function(p, N = 1)
 }
 
 #' Simulate a neutral binary trait on a given tree
-neutral.trait <- function(phy, qval, thresh = 0.10, x0 = 0)
+neutral.trait <- function(phy, qval, thresh = 0.10, model="mk2", x0 = 0)
 {
     st <- -1
 
@@ -40,10 +54,10 @@ neutral.trait <- function(phy, qval, thresh = 0.10, x0 = 0)
     if (thresh < 1)
     {
         while(length(table(st)) < 2 | any(table(st) / Ntip(phy) < thresh))
-            st <- sim.character(phy, qval, model="mk2", x0=x0)
+            st <- sim.character(phy, qval, model=model, x0=x0)
     } else {
         while(length(table(st)) < 2 | any(table(st) < thresh))
-            st <- sim.character(phy, qval, model="mk2", x0=x0)
+            st <- sim.character(phy, qval, model=model, x0=x0)
     }
 
     return(st)
