@@ -1,4 +1,4 @@
-<img align="right" src="logo.png">
+<img align="right" src="images/logo.png">
 
 # PhyCoMB: Phylogenetic Comparative Methods Benchmarking
 
@@ -29,4 +29,4 @@ A first suite of tests has been employed in a manuscript introducing a new metho
 And a grant proposal that includes support for developing PhyCoMB has been recommended for funding by NSF.
 We eventually envision a user-friendly interface to filter and summarize testing sets, maybe like this:
 
-![PhyCoMB interface mockup](mockup.png)
+![PhyCoMB interface mockup](images/mockup.png)
