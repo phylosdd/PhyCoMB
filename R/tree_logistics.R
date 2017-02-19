@@ -49,15 +49,17 @@ name.statefile <- function(Z)
 
 #' Write files for each tree.
 # Create tNNN.tre for tree and sNNN.csv for states.
-write.trees <- function(phy.all)
+write.trees <- function(phy.all, do.tree = TRUE, do.states = TRUE)
 {
     for (i in seq_along(phy.all))
     {
         phy <- phy.all[[i]]
         Z <- zfill(i, 3)
-        write.tree(phy, file=name.treefile(Z))
-        write.table(phy$tip.state, file=name.statefile(Z),
-                    col.names=F, sep=",", quote=F)
+        if (do.tree)
+            write.tree(phy, file=name.treefile(Z))
+        if (do.states)
+            write.table(phy$tip.state, file=name.statefile(Z),
+                        col.names=F, sep=",", quote=F)
     }
 }
 
