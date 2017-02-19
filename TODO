@@ -1,3 +1,6 @@
+eventually need a build script that runs all the tree/trait-making scripts
+    need to get the order correct, since some sets use trees from others
+
 set seed/make reproducible for mclapply
     setKXH setMWL
     https://cran.r-project.org/web/packages/doRNG/index.html
