@@ -32,3 +32,5 @@ plot.trees(phy.all)
 # Scale to age 1 (delaying until now because breaks plotting history)
 phy.1 <- mclapply(phy.all, scale.age.to.1, mc.cores=detectCores())
 write.trees(phy.1)
+
+junk <- lapply(1:50, wipe.tree)

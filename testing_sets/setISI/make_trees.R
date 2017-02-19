@@ -13,3 +13,5 @@ phy.keep <- require.both.states(phy.all, N=10)
 
 plot.trees(phy.keep[1:50])
 write.trees(phy.keep[1:50])
+
+junk <- lapply(1:50, wipe.tree)

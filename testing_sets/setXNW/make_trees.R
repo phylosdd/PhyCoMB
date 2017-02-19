@@ -36,3 +36,5 @@ phy.01 <- lapply(phy.all, multi.to.binary.states, 4)
 
 write.trees(phy.01, do.tree=F)
 plot.trees(phy.01, adj=c(0.508, 0.5))
+
+junk <- lapply(1:50, wipe.tree)

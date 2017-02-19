@@ -39,3 +39,5 @@ phy.all <- lapply(phy.all, discretize.states)
 
 plot.trees(phy.all, adj=c(0.5, 0.5))
 write.trees(phy.all)
+
+junk <- lapply(1:50, wipe.tree)

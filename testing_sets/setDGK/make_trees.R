@@ -20,3 +20,5 @@ phy.samp <- lapply(phy.all, prune.tree)
 
 plot.trees(phy.samp)
 write.trees(phy.samp)
+
+junk <- lapply(1:50, wipe.tree)

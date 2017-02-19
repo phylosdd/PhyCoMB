@@ -13,3 +13,5 @@ plot.trees(phy.all, states=1:2)
 
 phy.01 <- lapply(phy.all, change.to.01)
 write.trees(phy.01)
+
+junk <- lapply(1:50, wipe.tree)

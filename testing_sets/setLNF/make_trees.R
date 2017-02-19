@@ -9,3 +9,5 @@ phy.all <- trees(pars, type="bisse", n=50, max.taxa=500, max.t=Inf,
 
 plot.trees(phy.all)
 write.trees(phy.all)
+
+junk <- lapply(1:50, wipe.tree)

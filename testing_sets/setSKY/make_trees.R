@@ -18,26 +18,4 @@ phy.01 <- lapply(phy.all, multi.to.binary.states, n.states)
 phy.1 <- lapply(phy.01, scale.age.to.1)
 write.trees(phy.1)
 
-
-
-
-
-#--------------------------------------------------
-# # convert from multi to binary
-# change.to.12 <- function(p)
-# {
-#     s12 <- p$tip.state * 0
-#     s12[which(p$tip.state <= n.states/2)] <- 1
-#     s12[which(p$tip.state > n.states/2)] <- 2
-#     p$tip.state <- s12
-# 
-#     p
-# }
-# 
-# phy.12 <- lapply(phy.all, change.to.12)
-# plot.trees(phy.12, states=1:n.states)
-# 
-# phy.01 <- lapply(phy.12, change.to.01)
-# phy.1 <- lapply(phy.01, scale.age.to.1)
-# write.trees(phy.1)
-#--------------------------------------------------
+junk <- lapply(1:50, wipe.tree)

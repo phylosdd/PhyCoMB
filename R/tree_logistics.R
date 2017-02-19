@@ -81,7 +81,7 @@ scale.age.to.1 <- function(p)
     return(p)
 }
 
-#' Wipe tree and states: standardize taxon names
+#' Remove identifying information from tree number x
 wipe.tree <- function(x)
 {
     Z <- zfill(x, 3)
@@ -90,6 +90,7 @@ wipe.tree <- function(x)
 
     phy$node.label <- NULL
 
+    # standard tip names
     new.names <- paste("tip", 1:Ntip(phy), sep="")
     names(new.names) <- phy$tip.label
     phy$tip.label <- new.names[phy$tip.label]

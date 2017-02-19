@@ -42,3 +42,5 @@ for (i in 1:50)
 }
 
 plot.trees(phy.all, adj=c(0.508, 0.5))
+
+junk <- lapply(1:50, wipe.tree)

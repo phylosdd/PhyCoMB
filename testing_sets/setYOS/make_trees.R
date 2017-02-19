@@ -25,4 +25,5 @@ phy.01 <- lapply(phy.all, multi.to.binary.states, 4)
 phy.01 <- lapply(phy.01, scale.age.to.1)
 
 write.trees(phy.01)
-# plot.trees(phy.01, adj=c(0.508, 0.5))
+
+junk <- lapply(1:50, wipe.tree)
