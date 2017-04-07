@@ -24,9 +24,10 @@ Phylogenetic comparative methods could benefit from them, too.
 
 Well, it's at least off the ground.
 
-A first suite of tests has been employed in a manuscript introducing a new method of state-dependent diversification (FiSSE, Rabosky & Goldberg, in review at Evolution).
+A first suite of tests has been employed in a manuscript introducing a new method of state-dependent diversification
+[(FiSSE, Rabosky & Goldberg, Evolution)](http://dx.doi.org/10.1111/evo.13227).
 
-And a grant proposal that includes support for developing PhyCoMB has been recommended for funding by NSF.
+And a [grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1655478) that includes support for developing PhyCoMB has been funded by NSF.
 We eventually envision a user-friendly interface to filter and summarize testing sets, maybe like this:
 
 ![PhyCoMB interface mockup](images/mockup.png)
