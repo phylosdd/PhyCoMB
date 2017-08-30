@@ -4,52 +4,81 @@ User interfaces.
 
 \subsection{rough}
 
-(see \cref{sec:workflows_task})
-Choose \Task.
-Choose \Methods.
-Choose \Elements.
+see \cref{sec:workflows_task}
+
+\label{fig:views_select_task}
+Select the desired \Task.
+We will focus on `state-dependent diversification' with `discrete traits,' but eventually there might be others.
+Still thinking about if we can have different possible Questions within a \Task, \eg `Is this trait associated with diversification differences?' versus `Are speciation and extinction rates estimated accurately?'
+
+\label{fig:views_select_method}
+Select the desired \Methods.
+Choose by model/technique (\eg bisse, sister clades) and/or statistics (\eg AIC, Bayes factors).
+Need a nice interface for this, but not too complicated.
+
+\label{fig:views_select_element}
+Select the desired \Elements.
+A few options here:
+\begin{itemize}
+    \item Those in the \Benchmark.
+    \item Those in particular \Refsets.  Select from the list of \Refsets.
+    \item Select based on attributes of \Elements, including attributes of \Trees and \Traits.  Will require a nice interface. http://webworkflow.co.uk/plugins/pfSelect/
+    \item All.  Warn how many this is.
+\end{itemize}
+
 
 %--------------------------------------------------
 \subsection{\Performance report, \Task-focused}
-\label{sec:views_performance_task}
+\label{sec:views_report_task}
 %--------------------------------------------------
 
 from \cref{sec:workflows_task}
 
 see original proposal figure
 
+This is the single most important part of the user interface.
+
 Interactive interface:
 \begin{itemize}
     \item Select tags to float \Elements to top (within a \Refset)
     \item Same, but for categories (\ie the possible values within a column)
     \item Click arrow at top of column to sort on its categories
-    \item Click arrow to fold away a \Refset
-    \item Click something to fold away columns?
-    \item Apply a sequence of sort/filter actions.  Each refines the previous one, rather than replacing it.
+    \item Click arrow to fold away a \Refset https://js-tutorials.com/demos/flexigrid_example_demo/
+    \item Click something to fold away or resize columns? https://js-tutorials.com/demos/flexigrid_example_demo/ http://www.guriddo.net/demo/bootstrap/
+    \item Apply a sequence of sort/filter actions.  Each refines the previous one, rather than replacing it. http://tablesorter.com/docs/, http://www.jeasyui.com/demo/main/index.php?plugin=DataGrid "multiple sorting", https://datatables.net/examples/basic_init/multi_col_sort.html (but without paging)
     \item Clear some/all the sort/filter actions
     \item Select \Elements (rows) to hide
     \item Hide all non-floated/non-selected \Elements
+    \item Maybe color rows based on \Performance
+    \item Floating headers, remains visible when scrolling
+    \item Table may be large.  But show the whole thing, rather than `paging' it.  Be as space-efficient as possible.
 \end{itemize}
+
+seems like jQuery is good for this?
 
 Link to download CSV file (\cref{sec:downloads_report}).
 
 %--------------------------------------------------
 \subsection{\Performance report, \Method-focused}
-\label{sec:views_performance_method}
+\label{sec:views_report_method}
 %--------------------------------------------------
 
 from \cref{sec:workflows_method}
 
+most functionality like \cref{sec:views_report_task}
+
+In this case, there will be a column for each \Task (instead of for each \Method; \cref{sec:views_report_method}).
 Not sure how standard the task columns can be.
 Need to think about if all tasks/questions can be answered with one number or symbol.
 
-most functionality like \cref{sec:views_performance_task}
 
 %--------------------------------------------------
 \subsection{\Element}
 %--------------------------------------------------
 
 see details of a particular \Element
+
+snazzy plot of trait on tree?
 
 %--------------------------------------------------
 \subsection{\Method}
@@ -72,3 +101,8 @@ page to choose \Methods
 %--------------------------------------------------
 \subsection{Contribute \Method}
 %--------------------------------------------------
+
+form to fill out: task, refset, categories, justification
+way to upload performance results
+
+Administrator views?

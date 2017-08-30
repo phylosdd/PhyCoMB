@@ -29,6 +29,7 @@
 % lists
 \usepackage{enumitem}
 \setitemize{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setenumerate{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
 
 % links
 \usepackage{hyperref}
@@ -67,19 +68,22 @@
 
 % definitions specific to this document
 \newcommand{\phycomb}{PhyCoMB\xspace}
+\newcommand{\Benchmark}{\textit{BenchmarkSet}\xspace}
+\newcommand{\Benchmarks}{\textit{BenchmarkSet}s\xspace}
 \newcommand{\Element}{\textit{Element}\xspace}
 \newcommand{\Elements}{\textit{Element}s\xspace}
 \newcommand{\Method}{\textit{Method}\xspace}
 \newcommand{\Methods}{\textit{Method}s\xspace}
 \newcommand{\Performance}{\textit{Performance}\xspace}
-\newcommand{\Benchmark}{\textit{BenchmarkSet}\xspace}
-\newcommand{\Benchmarks}{\textit{BenchmarkSet}s\xspace}
 \newcommand{\Refset}{\textit{ReferenceSet}\xspace}
 \newcommand{\Refsets}{\textit{ReferenceSet}s\xspace}
-\newcommand{\Tree}{\textit{Tree}\xspace}
-\newcommand{\Trees}{\textit{Tree}s\xspace}
+\newcommand{\Report}{\textit{Report}\xspace}
+\newcommand{\Task}{\textit{Task}\xspace}
+\newcommand{\Tasks}{\textit{Task}s\xspace}
 \newcommand{\Trait}{\textit{Trait}\xspace}
 \newcommand{\Traits}{\textit{Traits}\xspace}
+\newcommand{\Tree}{\textit{Tree}\xspace}
+\newcommand{\Trees}{\textit{Tree}s\xspace}
 
 \title{Plans for the Phylogenetic Comparative Methods \\ Benchmark Database (\phycomb)}
 \author{}
@@ -92,9 +96,11 @@
 \input{intro}
 \input{proposal}
 \input{users}
-% \input{workflows}
-% \input{views}
-% \input{tables}
+\input{workflows}
+% \input{views} % TODO
+\section{Views [TODO]}
+% \input{tables} % TODO
+\section{Database Tables [TODO]}
 \input{downloads}
 
 \end{document}

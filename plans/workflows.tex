@@ -1,91 +1,134 @@
 \section{Workflows}
 
-Here are some examples of how different kinds of Users might interact with \phycomb.
+Here are some examples of how different kinds of users might commonly interact with \phycomb.
 
 %--------------------------------------------------
-\subsection{Explore \Performance of various \Methods for a particular \Task}
+\subsection{Viewer workflows}
+\label{sec:workflows_viewer}
+%--------------------------------------------------
+
+\subsubsection{Explore performance of various methods for a particular task}
 \label{sec:workflows_task}
-%--------------------------------------------------
 
-What \Methods are good or bad for my \Task of interest?
+The user's goal is to learn about how various methods perform for questions they're interested in.
+This means seeing which \Methods are available for a given \Task, and their \Performance, summarized in a \Report.
+This is the most important user interface component to design well.
 
-Select the desired \Task.
-We will focus on ``state-dependent diversification'' with ``discrete traits,'' but eventually there might be others.
-Still thinking about if we can have different possible Questions within a \Task, \eg ``Is this trait associated with diversification differences?'' versus ``Are speciation and extinction rates estimated accurately?''
+\begin{enumerate}
+    \item Select the desired \Task.
+          See \cref{fig:views_select_task} for what that might look like.
+    \item Select the desired \Methods.
+          See \cref{fig:views_select_method} for what that might look like.
+    \item Select the desired \Elements.
+          See \cref{fig:views_select_element} for what that might look like.
+    \item Browse the \Report.
+          See \cref{sec:views_report_task} for what that might look like and the types of interactivity needed.
+    \item Download the \Report.
+          See \cref{sec:downloads_report}.
+\end{enumerate}
 
-Select the desired \Methods.
-Choose by model/technique (\eg bisse, sister clades) and/or statistics (\eg AIC, Bayes factors).
-Need a nice interface for this, but not too complicated.
-
-Select the desired \Elements.
-A few options here:
-\begin{itemize}
-    \item Those in the \Benchmark.
-    \item Those in particular \Refsets.  Select from the list of \Refsets.
-    \item Select based on attributes of \Elements, including attributes of \Trees and \Traits.  Will require a nice interface.
-    \item All.  Warn how many this is.
-\end{itemize}
-
-Browse the \Performance report.
-See \cref{sec:views_performance_task} for what this might look like and the types of interactivity needed.
-
-Download the \Performance report.
-See \cref{sec:downloads_report}.
-
-%--------------------------------------------------
-\subsection{Explore \Performance of a particular \Method for various \Tasks}
+\subsubsection{Explore performance of a particular method for various tasks}
 \label{sec:workflows_method}
-%--------------------------------------------------
 
-What \Tasks is this \Method good or bad for?
+The user's goal is to learn about how a method they're interested in performs for various questions.
+This means seeing which \Tasks are addressed by a given \Method, and its \Performance, summarized in a \Report.
 
-Select the desired \Method.
-Default to all \Tasks, or select the desired ones.
-
-Select the desired \Elements (see \cref{sec:workflows_task}).
-
-Browse the \Performance report.
-In this case, there will be a row for each \Task (instead of for each \Method; \cref{sec:views_performance_method}).
-Need to think about if all tasks/questions can be answered with one number or symbol.
-
-Download the \Performance report.
-
-%--------------------------------------------------
-\subsection{Contribute a new \Method}
-%--------------------------------------------------
-
-Explain why it is worthwhile---what was the purpose of creating it?
-Specify what \Task it is for.
-Provide basic info: what class of model/technique, what kind of statistical inference, \etc (see \cref{sec:tables_model}).
-Provide a script that completely runs the \Method when provided with an \Element.
-Script output should include simple summary numbers that can be provided as \Performance.
-Perhaps multiple \Performance results if multiple \Tasks are addressed.
-Require \Performance results for at least the \Benchmark of \Elements (see \cref{sec:workflows_performance}).
+\begin{enumerate}
+    \item Select the desired \Method.
+          % See \cref{fig:views_select_method} for what that might look like. % maybe panels (a) and (b)?
+    \item Select the desired \Task, or default to all relevant \Tasks.
+          % See \cref{fig:views_select_task} for what that might look like. % maybe panels (a) and (b)?
+    \item Select the desired \Elements.
+          See \cref{fig:views_select_element} for what that might look like.
+    \item Browse the \Report.
+          See \cref{sec:views_report_method} for what that might look like and the types of interactivity needed.
+    \item Download the \Report.
+          See \cref{sec:downloads_report}.
+\end{enumerate}
 
 %--------------------------------------------------
-\subsection{Contribute a new Element}
+\subsection{Contributor workflows}
+\label{sec:workflows_contrib}
 %--------------------------------------------------
 
-Explain why it is worthwhile---what was the purpose of creating it?
-Document so that it is completely reproducible: generating script, data source.
-Include the data itself, or minimal pieces needed to generate or extract it?
-Specify what it is intended for: \Task, \Refset.
-Provide basic info: replicates, \Tree info, \Trait info.
-Require Performance results (see \cref{sec:workflows_performance}).
+\subsubsection{Contribute a new method}
 
-%--------------------------------------------------
-\subsection{Contribute new \Performance results}
+The user's goal is to add a \Method to the ones available, thinking that it will be useful for other people.
+% See \cref{fig:views_contrib_method} for what some of these steps might look like.
+
+\begin{enumerate}
+    \item Browse existing \Methods to determine if it's already available.
+    \item Provide a script that completely runs the \Method when provided with an \Element, returning the value for \Performance of a \Task.
+          % Perhaps multiple \Performance results if multiple \Tasks are addressed?
+    \item Fill in a form with basic information.
+          This info helps to categorize the \Method in the database, and it will be passed along to future users who see the \Method.
+        \begin{itemize}
+            \item Specify what \Task it is for.
+                  Maybe also what \Refset it is most interesting for, \eg if method was designed to fix a particular weakness.
+            \item Explain why the new \Method is worthwhile---what was the purpose in creating it?
+            \item Provide info that becomes values in columns: what category of model/technique, what kind of statistical inference, \etc (see \cref{sec:tables_model} for the required fields).
+        \end{itemize}
+    \item Upload \Performance results for at least the \Benchmark of \Elements.
+    \item See a \Report to confirm that things look correct.
+    \item Request that an Administrator accept the new \Method?
+\end{enumerate}
+
+\subsubsection{Contribute a new element}
+
+The user's goal is to add an \Element to the ones available, thinking that it will be useful for other people.
+
+\begin{enumerate}
+    \item Browse existing \Elements to determine if it or something similar is already available.
+        \begin{enumerate}
+            \item If the new \Element is better than an existing one, include a deprecation request for the Administrator?
+        \end{enumerate}
+    \item Provide data files for the new \Element.
+        \begin{enumerate}
+            \item Generating script, if applicable.  Link to empirical data source. \etc
+                  Needs to be completely documented and reproducible.
+            \item The actual tree and trait files.
+                  Or if using \Tree and/or \Trait from another \Element, link to that.
+        \end{enumerate}
+    \item Fill in a form with basic info:
+          This info helps to categorize the \Element in the database, and it will be passed along to future users who see the \Element.
+        \begin{itemize}
+            \item Specify what \Task it is for, and what \Refset it will belong to.
+            \item Explain why the new \Element is worthwhile---what was the purpose in creating it?
+            \item Provide info that becomes values in columns: simulated/empirical, sim regime, \etc (see \cref{sec:tables_element} for the required fields). % and Tree and Trait tables
+            \item Can some info be obtained automatically from the uploaded files?  \eg tree size
+        \end{itemize}
+    \item Upload \Performance results for all(?) \Methods that apply to that \Refset.
+    \item See a \Report to confirm that things look correct.
+    \item Request that an Administrator accept the new \Element.
+\end{enumerate}
+
+\subsubsection{Contribute a new performance result}
 \label{sec:workflow_performance}
-%--------------------------------------------------
 
-Find combinations of \Method + \Element that haven't yet be run.
-Provide \Performance results.
-Results could take different shapes for different \Tasks?
-
+This could be part of the workflow in contributing a new \Method or \Element.
+But it could also be done separately.
+In that case, find combinations of \Method + \Element that haven't yet be run, and fill in the values.
 
 %--------------------------------------------------
-\subsection{Deprecate a Method or Element}
+\subsection{Administrator workflows}
+\label{sec:workflows_admin}
 %--------------------------------------------------
 
-Don't entirely delete, but hide from most operations.
-If it is superceded, could build this in to contributing the replacement.
+\subsubsection{Alter the groupings of elements}
+
+Alter the \Elements in a \Refset.
+Alter the \Elements and/or \Refsets in a \Benchmark.
+
+\subsubsection{Approve an addition from a Contributor}
+
+Check the new \Method or \Element and publish it (make it available to all users) if it looks good.
+Maybe a general form for other requests, \eg to deprecate an \Element?
+
+\subsubsection{Deprecate a method or element}
+
+Don't entirely delete from the database, but hide from most operations?
+
+\subsubsection{Manage users}
+
+Field requests from users who wish to become Contributors?
+Or just let that be automatic, and then revoke Contributor status if someone causes trouble?
