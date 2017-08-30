@@ -1,20 +1,34 @@
 \section{Users}
 
-Different kinds of Users will interact with \phycomb in different ways.
+Different kinds of users will interact with \phycomb in different ways.
 They will have different goals and permissions.
-One person could be a different User at different times, e.g., I could do some work as an Administrator, then add data as a Contributor, than look through results as a Viewer.
+One person could be a different type of user at different times, \eg I could do some work as an Administrator, then add data as a Contributor, than look through results as a Viewer.
 
-\subsection{Administrator}
-
-read, add, delete
-login required
-
-\subsection{Contributor}
-
-add, but only after Administrator approves the submission?
-login required
-
+%--------------------------------------------------
 \subsection{Viewer}
+%--------------------------------------------------
 
-read-only
-no login required
+Can browse \phycomb contents through the web interface.
+Cannot make changes that affect anyone else.
+No login required.
+
+%--------------------------------------------------
+\subsection{Contributor}
+%--------------------------------------------------
+
+All the functionality of a Viewer.
+Additionally, Contributors can see and use the parts of the web interface for uploading \Elements, \Methods, and \Performance.
+Login required.
+
+Should the newly uploaded material be immediately integrated into the database and visible to all users, or should it not be published until an Administrator approves the submission?
+
+Contributors can't delete information, but perhaps they could flag \Elements, \etc that are no longer useful, so an Administrator could delete them.
+
+%--------------------------------------------------
+\subsection{Administrator}
+%--------------------------------------------------
+
+Can approve the uploads and suggested deletions made by Contributors.
+Can also make changes to the structure (\eg which \Elements are in a \Benchmark).
+Perhaps the interface will be different than what a Viewer or Contributor sees.
+Login required.
