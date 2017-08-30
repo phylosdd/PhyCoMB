@@ -1,0 +1,98 @@
+\section{Workflows}
+
+Here are some examples of how different kinds of Users might interact with \phycomb.
+
+%--------------------------------------------------
+\subsection{Explore \Performance of various \Methods for a particular \Task}
+\label{sec:workflows_task}
+%--------------------------------------------------
+
+What \Methods are good or bad for my \Task of interest?
+
+Select the desired \Task.
+We will focus on ``state-dependent diversification'' with ``discrete traits,'' but eventually there might be others.
+Still thinking about if we can have different possible Questions within a \Task, \eg ``Is this trait associated with diversification differences?'' versus ``Are speciation and extinction rates estimated accurately?''
+
+Select the desired \Methods.
+Choose by model/technique (\eg bisse, sister clades) and/or statistics (\eg AIC, Bayes factors).
+Need a nice interface for this, but not too complicated.
+
+Select the desired \Elements.
+A few options here:
+\begin{itemize}
+    \item Those in the \Benchmark.
+    \item Those in particular \Refsets.  Select from the list of \Refsets.
+    \item Select based on attributes of \Elements, including attributes of \Trees and \Traits.  Will require a nice interface.
+    \item All.  Warn how many this is.
+\end{itemize}
+
+Browse the \Performance report.
+See \cref{sec:views_performance_task} for what this might look like and the types of interactivity needed.
+
+Download the \Performance report.
+(As a CSV file.  Need to specify somewhere what the columns are.)
+Could get either the full report, or only for those rows (\Elements) and columns that are visible after interacting with the report view.
+
+%--------------------------------------------------
+\subsection{Explore \Performance of a particular \Method for various \Tasks}
+\label{sec:workflows_method}
+%--------------------------------------------------
+
+What \Tasks is this \Method good or bad for?
+
+Select the desired \Method.
+Default to all \Tasks, or select the desired ones.
+
+Select the desired \Elements (see \cref{sec:workflows_task}).
+
+Browse the \Performance report.
+In this case, there will be a row for each \Task (instead of for each \Method; \cref{sec:views_performance_method}).
+Need to think about if all tasks/questions can be answered with one number or symbol.
+
+Download the \Performance report.
+
+%--------------------------------------------------
+\subsection{Contribute a new \Method}
+%--------------------------------------------------
+
+Explain why it is worthwhile---what was the purpose of creating it?
+Specify what \Task it is for.
+Provide basic info: what class of model/technique, what kind of statistical inference, \etc (see \cref{sec:tables_model}).
+Provide a script that completely runs the \Method when provided with an \Element.
+Script output should include simple summary numbers that can be provided as \Performance.
+Perhaps multiple \Performance results if multiple \Tasks are addressed.
+Require \Performance results for at least the \Benchmark of \Elements (see \cref{sec:workflows_performance}).
+
+%--------------------------------------------------
+\subsection{Contribute a new Element}
+%--------------------------------------------------
+
+Explain why it is worthwhile---what was the purpose of creating it?
+Document so that it is completely reproducible: generating script, data source.
+Include the data itself, or minimal pieces needed to generate or extract it?
+Specify what it is intended for: \Task, \Refset.
+Provide basic info: replicates, \Tree info, \Trait info.
+Require Performance results (see \cref{sec:workflows_performance}).
+
+%--------------------------------------------------
+\subsection{Contribute new \Performance results}
+\label{sec:workflow_performance}
+%--------------------------------------------------
+
+Find combinations of \Method + \Element that haven't yet be run.
+Provide \Performance results.
+Results could take different shapes for different \Tasks?
+
+%--------------------------------------------------
+\subsection{Download an Element}
+%--------------------------------------------------
+
+Get minimal info needed to produce it: generating script, empirical data, \etc.
+Get the data itself (actual tree and trait files)?
+
+%--------------------------------------------------
+\subsection{Deprecate a Method or Element}
+%--------------------------------------------------
+
+Don't entirely delete, but hide from most operations.
+If it is superceded, could build this in to contributing the replacement.
