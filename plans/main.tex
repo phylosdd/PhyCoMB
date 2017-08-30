@@ -1,2 +1,78 @@
-Won't compile yet.
-(Just want to get thoughts down with some organization but minimal hassle.)
+\documentclass{article}
+
+% basics
+\usepackage[margin=1in]{geometry}
+\usepackage{mathptmx}
+
+% section headings
+\usepackage{titlesec}
+% (I've included a copy of titlesec.sty because there was a numbering bug in the 2016 release, which is still in wide circulation.)
+\titleformat*{\section}{\bfseries\scshape\large\centering}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\itshape\bfseries}
+
+% table of contents
+\usepackage[titles]{tocloft}
+\renewcommand\cftsecfont{\normalfont}
+\renewcommand\cftsecpagefont{\normalfont}
+
+% figures
+\usepackage{graphicx}
+
+% tables
+\usepackage{booktabs}
+\setlength\heavyrulewidth{0.15em}
+\cmidrulekern 0.2em
+\usepackage{multirow} 
+\renewcommand\multirowsetup{\centering}
+
+% links
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=black}
+\usepackage{url}
+\def\UrlFont{\em}
+
+% cross-refs
+\usepackage[capitalize, sort&compress, nameinlink]{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+\crefname{section}{Sect.}{Sects.}
+\crefname{equation}{Eq.}{Eqs.}
+\crefformat{equation}{Eq.~#2#1#3}
+\crefrangeformat{equation}{Eqs.~#3#1#4--#5#2#6}
+\crefmultiformat{equation}{Eqs.~#2#1#3}{--#2#1#3}{, #2#1#3}{ and~#2#1#3}
+
+% citations
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+\setlength{\bibsep}{4pt}
+\renewcommand{\bibsection}{\subsection{References}}
+
+% to make future picky-ness less tedious
+\usepackage{xspace}
+\newcommand*{\ie}{i.e.,\xspace}
+\newcommand*{\eg}{e.g.,\xspace}
+% \newcommand*{\ie}{i.e.\@\xspace}
+% \newcommand*{\eg}{e.g.\@\xspace}
+\makeatletter
+\newcommand*{\etc}{%
+    \@ifnextchar{.}%
+        {etc}%
+        {etc.\@\xspace}%
+}
+\makeatother
+
+% definitions specific to this document
+\newcommand{\phycomb}{PhyCoMB\xspace}
+
+\title{Plans for the Phylogenetic Comparative Methods \\ Benchmark Database (\phycomb)}
+\author{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{intro}
+\input{proposal}
+
+\end{document}

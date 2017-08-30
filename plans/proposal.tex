@@ -1,11 +1,13 @@
-\section{Proposal}
+\section{Proposal Content}
 
 Here is what was originally proposed to NSF/BSF.
 
-\subsection{Community resource for benchmark tests of model performance}
+\bigskip
 
-\phycomb will challenge new methods in a standardized manner, revealing their strengths and weaknesses early in their lifecycle.
+PhyCoMB will challenge new methods in a standardized manner, revealing their strengths and weaknesses early in their lifecycle.
 It will focus on testing if discrete traits affect rates of speciation and extinction, but the work will also support questions of trait evolution and lineage diversification separately.
+
+\subsection{Community resource for benchmark tests of model performance}
 
 A paper introducing a new phylogenetic comparative method typically includes 
 essential simulations that examine its power and bias and reveal the parameter space in which it will be most beneficial.
@@ -21,7 +23,7 @@ Thus, phylogenetic comparative methods papers typically discuss possible artifac
 
 We aim to break these barriers to the routine, rigorous testing of new phylogenetic comparative methods by making robustness testing more straightforward.
 We will develop a suite of tests that can easily be deployed to assess the performance of a new method and compare its behavior against other methods designed for the same questions.
-The product will be called \textbf{PhyCoMB: Phylogenetic Comparative Methods Benchmarking (\cref{fig:phycomb})}.
+The product will be called \textbf{PhyCoMB: Phylogenetic Comparative Methods Benchmarking} (\cref{fig:proposal_phycomb}).
 % PhyCoMB will exist as a large collection of testing datasets and metadata for download, and as a web service for identifying tests and viewing method performances.
 %
 Benchmark tests are standard practice in many fields, from computer hardware to bioinformatics.
@@ -79,10 +81,10 @@ The second stage that we envision for PhyCoMB is gradual community adoption beyo
 PhyCoMB will evolve through contributions of new elements, as future work uncovers complex scenarios that challenge the assumptions of our methods.
 % Elements will be contributed by anyone who has a new idea for testing, and the most valuable of these will be added to the curated benchmarks.
 
-\begin{framefloat}
-\centering \includegraphics[width=\textwidth]{phycomb.pdf}
-\captionof{figure}{
-\textbf{Vision for \phycomb.}
+\begin{figure}
+\includegraphics[width=\textwidth]{images/proposed}
+\caption{
+Vision for \phycomb.
 The Phylogenetic Comparative Methods Benchmark database will provide test datasets and reports of method performance.
 Example annotations are shown for four elements (comprising trees and traits), and interactive behavior of the web interface is noted.
 Compared are two methods, which test for trait-dependent diversification by assessing the difference in estimated net diversification rates.
@@ -91,4 +93,25 @@ Reference set 1 reveals the BiSSE-based method is prone to incorrectly associate
 Reference set 2 reveals that HiSSE has much lower power than BiSSE in this test.
 (Note that HiSSE is much more effective under model averaging; \citealt{beaulieu2016}.)
 }
-\end{framefloat}
+\label{fig:proposal_phycomb}
+\end{figure}
+
+\bibliography{refs}
+\bibliographystyle{nsf}
+
+\subsection{Later thoughts}
+
+This subsection wasn't part of the proposal.
+But it explains some ways in which the current plan differs from what was proposed.
+
+\bigskip
+
+\textit{Task} needs to be defined a bit more carefully.
+For example, even within the realm of state-dependent diversification, one approach/question is hypothesis testing and another approach/question is parameter estimation.
+Results for those questions would be reported differently.
+And even a given method on a given element could perform better on one question than the other.
+Below, \textit{Task} is assumed to include this refinement.
+But we could instead have a separate \textit{Question} component that intersects with \textit{Task} to specify the problem.
+
+If we are going to include methods that co-infer the phylogeny along with answering the comparative methods question, we'd need to allow for input data to be a sequence alignment rather than a tree.
+That is a potentially promising direction for methods development, but it's beyond the immediate scope of \phycomb.
