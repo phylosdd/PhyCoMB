@@ -1,0 +1,52 @@
+\section{Downloads}
+
+After users view and filter the results, they may want to download information for use offline.
+Each download should be a single zipped file, which contains only plain text files with a logical directory/folder structure.
+
+%--------------------------------------------------
+\subsection{Obtaining testing files}
+\label{sec:downloads_element}
+%--------------------------------------------------
+
+When an \Element is downloaded, the user should receive:
+\begin{itemize}
+    \item Information about it, written in an auto-generated text file.
+    \item The script that generated it, if any.
+    \item The tree files and (if relevant) trait files.  Could have an option to omit these if the script is sufficient.
+\end{itemize}
+These files should all have sensible names.
+
+When multiple \Elements are downloaded together, each should be in a separate directory.
+If they have tree or trait files in common, could have an option to use symlinks instead of duplicating the content.
+Also, a spreadsheet (CSV file, one row per \Element) should be included so it's easy to see which \Elements have which attributes (columns in \Tree, membership in \Refset, \etc).
+
+If an entire \Refset is requested for download, each \Element within it should be in a separate directory.
+
+If an entire \Benchmark is requested for download, each \Refset within it should be in a separate directory.
+
+% todo: link to view to access this
+
+%--------------------------------------------------
+\subsection{Obtaining methods scripts}
+\label{sec:downloads_method}
+%--------------------------------------------------
+
+When a \Method is downloaded, the user should receive:
+\begin{itemize}
+    \item Information about it, written in an auto-generated text file.
+    \item The script to run it.
+\end{itemize}
+
+When multiple \Methods are downloaded together, each should be in a separate directory.
+
+% todo: link to view to access this
+
+%--------------------------------------------------
+\subsection{Obtaining performance reports}
+\label{sec:downloads_report}
+%--------------------------------------------------
+
+The user should be able to download a CSV file that looks basically like the results table view (\cref{sec:views_performance_task} or \cref{sec:views_performance_method}).
+Either the full report could be requested, or only to include those rows (\Elements) and columns that are visible after interacting with the report view.
+
+Are additional columns needed, \eg directory names of \Elements and \Methods if they are downloaded?
