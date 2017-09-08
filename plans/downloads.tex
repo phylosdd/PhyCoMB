@@ -10,9 +10,9 @@ Each download should be a single zipped file, which contains only plain text fil
 
 When an \Element is downloaded, the user should receive:
 \begin{itemize}
-    \item Information about it, written in an auto-generated text file.
-    \item The script that generated it, if any.
-    \item The tree files and (if relevant) trait files.  Could have an option to omit these if the script is sufficient.
+    \item Information about it (\cref{sec:tables_elements}), written in an auto-generated text file.
+    \item \Tree files and/or generating script and information (\cref{sec:tables_trees}).
+    \item If applicable, \Trait files and/or generating script and information (\cref{sec:tables_traits}).
 \end{itemize}
 These files should all have sensible names.
 
@@ -23,6 +23,14 @@ Also, a spreadsheet (CSV file, one row per \Element) should be included so it's 
 If an entire \Refset is requested for download, each \Element within it should be in a separate directory.
 
 If an entire \Benchmark is requested for download, each \Refset within it should be in a separate directory.
+
+Need to decide on the file format for \Tree and \Trait.
+Some options:
+\begin{itemize}
+    \item One Nexus file per \Element, containing all the trees and all the traits.  Uncluttered, but more annoying to parse.
+    \item One file per \Tree (each line a Newick string) and one file per \Trait (CSV with one column per trait).
+    \item One file per tree (many per \Tree) and one file per trait (many per \Trait), with filenames that show which belong together (\eg \texttt{t001.tre} and \texttt{s001.csv}).
+\end{itemize}
 
 % todo: link to view to access this
 

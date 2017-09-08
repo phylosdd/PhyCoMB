@@ -4,9 +4,12 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{mathptmx}
 
+\parindent 0pt
+\parskip 4pt
+
 % section headings
 \usepackage{titlesec}
-% (I've included a copy of titlesec.sty because there was a numbering bug in the 2016 release, which is still in wide circulation.)
+% (A copy of titlesec.sty is included because there was a numbering bug in the 2016 release, which is still in wide circulation.)
 \titleformat*{\section}{\bfseries\scshape\large\centering}
 \titleformat*{\subsection}{\bfseries}
 \titleformat*{\subsubsection}{\itshape\bfseries}
@@ -28,7 +31,7 @@
 
 % lists
 \usepackage{enumitem}
-\setitemize{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setitemize{noitemsep, topsep=-4pt, parsep=0pt, partopsep=0pt}
 \setenumerate{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
 
 % links
@@ -99,8 +102,7 @@
 \input{workflows}
 % \input{views} % TODO
 \section{Views [TODO]}
-% \input{tables} % TODO
-\section{Database Tables [TODO]}
+\input{tables}
 \input{downloads}
 
 \end{document}
