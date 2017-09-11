@@ -1,43 +1,10 @@
 \section{Database Tables}
 
 I'm assuming the information would be stored in a relational database.
-Here's what could be in the tables.
+Below is what could be in the tables.
 
 I think it's realistic to settle on the set of tables and their relationships early on.
-But some of the content in the tables (columns, allowable values for some columns) will probably be adjusted as we go along.
-
-%--------------------------------------------------
-\subsection{\Task}
-%--------------------------------------------------
-
-Unique ID: arbitrary number.
-Each \Task will be identified to a User by a phrase.
-There won't be many \Tasks, and perhaps only one for awhile.
-
-Do we also need Questions or other attributes within each \Task?
-For example, say my Task is state-dependent diversification.
-Discrete traits versus continuous traits.
-Hypothesis testing Question versus parameter estimation Question.
-
-Questions and Tasks could be separate tables.
-Each \Task could include one or more Question.
-
-%--------------------------------------------------
-\subsection{\Refset}
-%--------------------------------------------------
-
-Unique ID: simple human-readable numbering scheme.
-There will also be a phrase that identifies each one to a User.
-
-\Task(s) it's relevant to.
-
-Number of \Elements it contains?  Can be determined from \Elements table.
-
-%--------------------------------------------------
-\subsection{\Benchmark}
-%--------------------------------------------------
-
-some \Elements, which bring along their \Refset membership
+But some of the content in the tables (columns, allowable values for some columns) will need to be adjusted as we go along.
 
 %--------------------------------------------------
 \subsection{Elements}
@@ -49,15 +16,16 @@ Each \Element consists of one \Tree (\cref{sec:tables_trees}), optionally one \T
 
 \begin{description}
     \item[Unique ID] Arbitrary, \eg E-47295.  Auto-generated when created.
-    \item[Tree] Link to corresponding \Tree.
-    \item[Trait] Link to corresponding \Trait, if any.
-    \item[Refset] Link to one or more \Refsets for which this \Element is relevant.
+    \item[Tree] Link to one \Tree.
+    \item[Trait] Link to one \Trait, or empty.
+    \item[Reference set] Link to one or more \Refsets (\cref{sec:tables_refsets}) that include this \Element.
+    \item[Benchmark] Link to \Benchmarks (\cref{sec:tables_benchmarks}) that include this \Element, if any.
     \item[Number of items] Positive integer.
             It's determined by the combination of \Tree and \Trait, but the Contributor will provide this info.
             % Could get 50 elements via 50 trees and no traits, or via 1 tree and 50 traits, or via 50 trees and 50 traits.
     \item[Contribution info] (could be same or different from info for \Tree and/or \Trait)
         \begin{description}
-            \item[Contributor] a registered user, see \cref{sec:users_contributor}
+            \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Element is created
             \item[Comment] a few sentences provided by the Contributor
         \end{description}
@@ -83,11 +51,12 @@ Here are those properties:
     \item[Number of trees] Positive integer.
     \item[Contribution info]:
         \begin{description}
-            \item[Contributor] a registered user, see \cref{sec:users_contributor}
+            \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Tree is created
             \item[Comment] a few sentences provided by the Contributor
         \end{description}
     \item[Elements] The \Element(s) to which the \Tree belongs.
+    \item[Traits] The \Trait(s) that use this \Tree.  (Not sure if we need this.)
     \item[Columns of tree info] Will be figured out as we go along, but likely ones are:
         \begin{description}
             \item [Number of tips] single number or numeric range
@@ -107,8 +76,13 @@ Here are those properties:
 %--------------------------------------------------
 
 Each \Trait object consists of at least one trait value per species.
-There could be multiple such sets in one \Trait object.
-In that case, all the trait sets have the same properties.
+There could be multiple such sets in one \Trait object, \eg when simulating data so that each tree in a \Tree goes with one trait set in a \Trait.
+
+A \Trait isn't useful on its own---it only makes sense when associated with a \Tree.
+A \Trait will usually only correspond to one \Tree, but that's not required.
+For example, if empirical data are used to make different \Trees with different phylogenetic inference methods, we would have many \Trees and one \Trait.
+
+All the trait sets within a \Trait have the same properties.
 Here are those properties:
 
 \begin{description}
@@ -118,10 +92,10 @@ Here are those properties:
     \item[Generating script] The code used to simulate or otherwise create the traits.
             A file to download.  Not all \Traits will have one.
             Might be the same as the generating script for the corresponding \Tree.
-    \item[Number of trait sets] Positive integer.
-    \item[Contribution info] (might or might not be identical to the corresponding \Tree(s))
+    \item[Number of trait sets] Positive integer.  Probably either 1, or one per tree.
+    \item[Contribution info] (might or might not be identical to the corresponding \Tree)
         \begin{description}
-            \item[Contributor] a registered user, see \cref{sec:users_contributor}
+            \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Trait is created
             \item[Comment] a few sentences provided by the Contributor
         \end{description}
@@ -136,44 +110,152 @@ Here are those properties:
 \end{description}
 
 %--------------------------------------------------
-\subsection{\Method}
+\subsection{Reference Set}
+\label{sec:tables_refsets}
 %--------------------------------------------------
 
-Unique ID: generate as each \Method is created.
-Users will see that identifier, so should be human-readable.
-Could be arbitrary numbers or letters, either generated sequentially or randomly (to reduce user bias).
-Or could reflect the content of the \Method, \eg first letter of model/technique and statistics.
+Each \Refset is a collection of \Elements (perhaps hundreds), plus some other information.
 
-\Task(s) it's relevant to.
-Or only \Refset(s) it's relevant to, and then that is mapped to \Task(s)?
+\begin{description}
+    \item[Unique ID] Arbitrary, \eg R-43853.  Auto-generated when created.
+    \item[Name] A short phrase that identifies the \Refset to a human.  Could be instead of the Unique ID.
+    \item[Description] An explanation of what this \Refset is designed to test.
+    \item[Elements] Link to \Element(s) in the \Refset.  It should also be easy to obtain the total number of \Elements.
+    \item[Benchmarks] Link to \Benchmark(s) that contain this parts of this \Refset, if any.
+    \item[Methods] Link to \Method(s) for which this \Refset is relevant.
+    \item[History] Notes from Contributors who have created or changed the \Refset.  (More than one column, but I'm not sure of the best format.)
+\end{description}
 
-Model (bisse, etc) or Technique (sister clades).
-Statistical approach (bayes factors, aic, model averaging, sign test, etc).
-(These should be categories.  Maybe their own Table?  With links to papers/citations?)
+(I'm not sure how much linking across tables is necessary.
+For example, I've included links to \Benchmark and \Method here, but perhaps those connections could be obtained merely from the \Benchmark and \Method tables themselves.)
 
-Script.
-Should take \Element as input, return a simple answer to \Task.
+%--------------------------------------------------
+\subsection{Benchmark Set}
+\label{sec:tables_benchmarks}
+%--------------------------------------------------
 
-How to run a single analysis and return results in multiple forms, \eg hypothesis testing question and parameter estimation question?
-Call those separate \Methods?  Link those \Methods for clarity and code reuse?
+Each \Benchmark is a collection of \Elements (perhaps dozens), linked to one specific \Task, plus some other information.
+These may be updated frequently, as new \Elements are added and old ones are removed.
 
+\begin{description}
+    \item[Unique ID] There won't be many of them, so we could have more meaningful names.  These could be constructed from the name of the \Task and a number (in case we want to be trying out a few benchmark sets at once).
+    \item[Name] A short phrase that identifies the \Benchmark to a human.
+    \item[Description] An explanation of what this \Benchmark is designed to test.
+    \item[Task] Link to the \Task.
+    \item[Elements] Link to \Element in the \Benchmark.  It should also be easy to obtain the total number of \Elements and their \Refset membership.
+    \item[Methods] Link to \Method(s) for which this \Benchmark is relevant.
+    \item[History] Notes from Contributors who have created or changed the \Benchmark.  (More than one column, but I'm not sure of the best format.)
+\end{description}
+
+%--------------------------------------------------
+\subsection{Task}
+\label{sec:tables_tasks}
+%--------------------------------------------------
+
+The top layer of organization is the \Task.
+There won't be many, and perhaps only one for awhile (\ie state-dependent diversification).
+
+Not discussed in the original proposal (\cref{sec:proposal}) is the concept of grouping tasks or questions within them.
+For example, if the task is state-dependent diversification, there could be different sub-tasks for discrete-valued and continuous-valued traits.
+We might also want different questions for hypothesis testing (Is my trait associated with diversification shifts?) versus parameter estimation (How much higher are speciation rates for this state?).
+This latter level of detail is essential for reporting results simply (\cref{sec:tables_results}).
+
+I think designing this layer of organization well will be quite important for \phycomb to be useful.
+But we may not know the best strategy until we see how it grows.
+So we'll need more discussions and probably some flexibility here.
+For the moment, let's assume that \Task is defined as specifically as necessary.
+
+%--------------------------------------------------
+\subsection{Methods}
+\label{sec:tables_methods}
+%--------------------------------------------------
+
+\cref{sec:tables_elements,sec:tables_trees,sec:tables_traits,sec:tables_refsets,sec:tables_benchmarks,sec:tables_tasks} were all about the testing datasets themselves.
+Now we consider the analysis methods that the tests are designed to evaluate.
+
+\begin{description}
+    \item[Unique ID] Arbitrary, \eg M-93925.  Auto-generated when created.
+    \item[Name] A few words describing the approach. % (Or not?  Or should \Trees, \Traits, \Elements, \etc all have this?)
+    \item[Analysis script] The code used to run the method.  A file to download.
+    \item[Contribution info]:
+        \begin{description}
+            \item[Contributor] a registered user (\cref{sec:users_contributor})
+            \item[Date] auto-populated when \Method is created
+            \item[Comment] a few sentences provided by the Contributor
+        \end{description}
+    \item[Scope] Some indication of what this method can be used on, but not sure exactly what.
+            Could be a list of \Refsets.  Definitely needs to map to \Tasks, either directly or indirectly.
+    \item[Columns of methods info] Will be figured out as we go along, but likely ones are:
+        \begin{description}
+            \item [Technique] `model-based' or `descriptive' (need better terminology)
+            \item [Statistics] `Bayes factors', `AIC', `parameter values', `model averaging', `sign test', \etc
+        \end{description}
+    \item [Tags] Various descriptive words. % e.g., sse, sister clades
+            (See tag notes in \cref{sec:tables_trees}.  Different tags for \Methods, though.)
+\end{description}
+
+Methods often come in groups, and I'm not sure how to handle this.
+For example, the same basic procedure could be tweaked in a few ways (in the algorithm, or the type of stats used), and testing would reveal which was best.
+Some possible approaches:
 \begin{itemize}
-    \item Name of the Contributor.
-    \item Comment from the Contributor.
-    \item Date contributed.
+    \item Ignore this complication.
+          Each \Method is a stand-alone entity, and Contributors can just explain in the Comments if they want.
+    \item Ignore this complication in the database structure, but maintain by hand a high-level summary of the available \Methods.
+          Could be tough if \Methods are added frequently, though could ask Contributor for suggestions on how to update the summary accordingly.
+    \item Collect enough meta-data (Columns, Tags, \etc) to generate a summary of relationships among \Methods.
+          Not clear that this can usefully be done algorithmically, though.
+    \item Allow one \Method to link to others.
+          But then get into issues of how similar is similar enough to link (\eg `coded like' versus `inspired by').
+          And then there would be lots of code reuse among scripts of different-but-related \Methods.
+    \item Allow multiple analysis scripts and/or libraries of shared functions per \Method.
+          Seems likely to get messy, though, especially when summarizing results.
+    \item Allow one explicit level of hierarchy in \Methods.
+          Contributor groups them together if they share code, but each is numbered separately and results are reported separately for each variant.
 \end{itemize}
 
+I'm currently leaning toward the by-hand summary or the single layer of explicit hierarchy, but other thoughts would be very welcome.
+
 %--------------------------------------------------
-\subsection{\Performance}
+\subsection{Results}
+\label{sec:tables_results}
 %--------------------------------------------------
 
-Unique ID: arbitrary number.
+When a \Method is run on an \Element, the output should be a clear answer to a \Task.
+This answer is a single \Result.
+Probably it will be a number (\eg proportion of trees that yielded an answer of `yes'; overall difference in parameter estimates), but perhaps it could be a binary or categorical answer.
 
-Each combination of \Method and \Task (or at least Question) has a unique \Performance result.
-Hopefully this can be just a single number, \eg proportion of trees on which the conclusion was correct.
+The table of \Results would then have these columns:
+\begin{description}
+    \item[Unique ID] of the \Result
+    \item[Method] Link to \Method
+    \item[Element] Link to \Element
+    \item[Task] Link to \Task
+    \item[Value] The answer
+    \item[Detail] Maybe we should store the answer on each \Tree/\Trait within the \Element?
+          Potentially useful to have for an end user, but maybe too much detail for \phycomb to interpret.
+\end{description}
 
-But we might need more, \eg accuracy of estimates for various parameters.
-This could depend on both the \Method and the Question.
+It is possible that we don't need to include \Task here, if \Method is already specific enough that it applies to a single \Task.
+See discussion elsewhere about the specificity of \Methods (\cref{sec:tables_methods}) and \Tasks (\cref{sec:tables_tasks}).
+
+One concern I have is that reducing each \Result to a single number would cause analyses to be simple-minded rather than nuanced.
+On the other hand, we need to keep things simple enough that we can summarize across lots of tests and methods.
+Would be good to discuss this.
+
+We will definitely need nice ways to summarize this huge table of results for users.
+I'm not sure whether this would be done within the database structure or when generating views (\cref{sec:views}).
+Some summaries we'll want:
+\begin{itemize}
+    \item Overall performance of a \Method on a \Refset for a \Task
+    \item Overall performance of a \Method on a \Benchmark for a \Task
+    \item Overall performance of a \Method at a \Task
+    \item Performance of all \Methods on an \Element
+    \item Performance of all \Methods on an \Refset
+    \item Performance of all \Methods on an \Benchmark
+\end{itemize}
+
+
+
 
 %--------------------------------------------------
 % "Normalization rules" for relational database structure:
