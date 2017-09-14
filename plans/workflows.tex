@@ -1,4 +1,5 @@
 \section{Workflows}
+\label{sec:workflows}
 
 Here are some examples of how different kinds of users might commonly interact with \phycomb.
 
@@ -13,16 +14,17 @@ Here are some examples of how different kinds of users might commonly interact w
 The user's goal is to learn about how various methods perform for questions they're interested in.
 This means seeing which \Methods are available for a given \Task, and their \Performance, summarized in a \Report.
 This is the most important user interface component to design well.
+% (Rough ideas of Views in \cref{sec:views_task}.)
 
 \begin{enumerate}
     \item Select the desired \Task.
-          See \cref{fig:views_select_task} for what that might look like.
+          % See \cref{fig:views_select_task} for what that might look like.
     \item Select the desired \Methods.
-          See \cref{fig:views_select_method} for what that might look like.
+          % See \cref{fig:views_select_method} for what that might look like.
     \item Select the desired \Elements.
-          See \cref{fig:views_select_element} for what that might look like.
+          % See \cref{fig:views_select_element} for what that might look like.
     \item Browse the \Report.
-          See \cref{sec:views_report_task} for what that might look like and the types of interactivity needed.
+          See \cref{sec:views_report_task} for the types of interactivity needed.
     \item Download the \Report.
           See \cref{sec:downloads_report}.
 \end{enumerate}
@@ -39,9 +41,9 @@ This means seeing which \Tasks are addressed by a given \Method, and its \Perfor
     \item Select the desired \Task, or default to all relevant \Tasks.
           % See \cref{fig:views_select_task} for what that might look like. % maybe panels (a) and (b)?
     \item Select the desired \Elements.
-          See \cref{fig:views_select_element} for what that might look like.
+          % See \cref{fig:views_select_element} for what that might look like.
     \item Browse the \Report.
-          See \cref{sec:views_report_method} for what that might look like and the types of interactivity needed.
+          See \cref{sec:views_report_method} for the types of interactivity needed.
     \item Download the \Report.
           See \cref{sec:downloads_report}.
 \end{enumerate}
@@ -58,17 +60,10 @@ The user's goal is to add a \Method to the ones available, thinking that it will
 
 \begin{enumerate}
     \item Browse existing \Methods to determine if it's already available.
-    \item Provide a script that completely runs the \Method when provided with an \Element, returning the value for \Performance of a \Task.
-          % Perhaps multiple \Performance results if multiple \Tasks are addressed?
-    \item Fill in a form with basic information.
+    \item Provide a script that completely runs the \Method when provided with an \Element, returning the \Result of a \Task.
+    \item Fill in a form with basic information (described in \cref{sec:tables_method}).
           This info helps to categorize the \Method in the database, and it will be passed along to future users who see the \Method.
-        \begin{itemize}
-            \item Specify what \Task it is for.
-                  Maybe also what \Refset it is most interesting for, \eg if method was designed to fix a particular weakness.
-            \item Explain why the new \Method is worthwhile---what was the purpose in creating it?
-            \item Provide info that becomes values in columns: what category of model/technique, what kind of statistical inference, \etc (see \cref{sec:tables_models} for the required fields).
-        \end{itemize}
-    \item Upload \Performance results for at least the \Benchmark of \Elements.
+    \item Upload \Results for at least the \Benchmark of \Elements.
     \item See a \Report to confirm that things look correct.
     \item Request that an Administrator accept the new \Method?
 \end{enumerate}
@@ -79,27 +74,19 @@ The user's goal is to add an \Element to the ones available, thinking that it wi
 
 \begin{enumerate}
     \item Browse existing \Elements to determine if it or something similar is already available.
-        \begin{enumerate}
-            \item If the new \Element is better than an existing one, include a deprecation request for the Administrator?
-        \end{enumerate}
-    \item Provide data files for the new \Element.
+    \item Provide data files for the new \Element (see \cref{sec:tables_element}).
         \begin{enumerate}
             \item Generating script, if applicable.  Link to empirical data source. \etc
                   Needs to be completely documented and reproducible.
             \item The actual tree and trait files.
                   Or if using \Tree and/or \Trait from another \Element, link to that.
         \end{enumerate}
-    \item Fill in a form with basic info:
+    \item Fill in a form with basic information (described in \cref{sec:tables_element}).
           This info helps to categorize the \Element in the database, and it will be passed along to future users who see the \Element.
-        \begin{itemize}
-            \item Specify what \Task it is for, and what \Refset it will belong to.
-            \item Explain why the new \Element is worthwhile---what was the purpose in creating it?
-            \item Provide info that becomes values in columns: simulated/empirical, sim regime, \etc (see \cref{sec:tables_elements} for the required fields). % and Tree and Trait tables
-            \item Can some info be obtained automatically from the uploaded files?  \eg tree size
-        \end{itemize}
-    \item Upload \Performance results for all(?) \Methods that apply to that \Refset.
+    \item Upload \Results for all(?) \Methods that apply to that \Refset.
     \item See a \Report to confirm that things look correct.
     \item Request that an Administrator accept the new \Element.
+          (If the new \Element is better than an existing one, include a deprecation request?)
 \end{enumerate}
 
 \subsubsection{Contribute a new performance result}

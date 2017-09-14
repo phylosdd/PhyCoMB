@@ -1,4 +1,5 @@
 \section{Database Tables}
+\label{sec:tables}
 
 I'm assuming the information would be stored in a relational database.
 Below is what could be in the tables.
@@ -8,18 +9,18 @@ But some of the content in the tables (columns, allowable values for some column
 
 %--------------------------------------------------
 \subsection{Elements}
-\label{sec:tables_elements}
+\label{sec:tables_element}
 %--------------------------------------------------
 
-Each \Element consists of one \Tree (\cref{sec:tables_trees}), optionally one \Trait (\cref{sec:tables_traits}), and some other information.
+Each \Element consists of one \Tree (\cref{sec:tables_tree}), optionally one \Trait (\cref{sec:tables_trait}), and some other information.
 % Reason for \Tree and \Trait being separate entities, rather than only parts of \Element, is so they can be reused, \eg same \Tree with different \Traits makes for different \Elements.
 
 \begin{description}
     \item[Unique ID] Arbitrary, \eg E-47295.  Auto-generated when created.
     \item[Tree] Link to one \Tree.
     \item[Trait] Link to one \Trait, or empty.
-    \item[Reference set] Link to one or more \Refsets (\cref{sec:tables_refsets}) that include this \Element.
-    \item[Benchmark] Link to \Benchmarks (\cref{sec:tables_benchmarks}) that include this \Element, if any.
+    \item[Reference set] Link to one or more \Refsets (\cref{sec:tables_refset}) that include this \Element.
+    \item[Benchmark] Link to \Benchmarks (\cref{sec:tables_benchmark}) that include this \Element, if any.
     \item[Number of items] Positive integer.
             It's determined by the combination of \Tree and \Trait, but the Contributor will provide this info.
             % Could get 50 elements via 50 trees and no traits, or via 1 tree and 50 traits, or via 50 trees and 50 traits.
@@ -35,7 +36,7 @@ It will be common for a user to download one or more \Elements (\cref{sec:downlo
 
 %--------------------------------------------------
 \subsection{Trees}
-\label{sec:tables_trees}
+\label{sec:tables_tree}
 %--------------------------------------------------
 
 Each \Tree object is actually a set of trees, all with the same properties.
@@ -72,7 +73,7 @@ Here are those properties:
 
 %--------------------------------------------------
 \subsection{Traits}
-\label{sec:tables_traits}
+\label{sec:tables_trait}
 %--------------------------------------------------
 
 Each \Trait object consists of at least one trait value per species.
@@ -88,7 +89,7 @@ Here are those properties:
 \begin{description}
     \item[Unique ID] Arbitrary, \eg A-57387.  Auto-generated when created.
     \item[The traits] Each set of traits is simply a list of numbers, labeled by tip/species name.
-            As for \Trees (\cref{sec:tables_trees}), this info could reside directly within the database or in a linked text file (\eg CSV), which will frequently be downloaded by users (\cref{sec:downloads_element}).
+            As for \Trees (\cref{sec:tables_tree}), this info could reside directly within the database or in a linked text file (\eg CSV), which will frequently be downloaded by users (\cref{sec:downloads_element}).
     \item[Generating script] The code used to simulate or otherwise create the traits.
             A file to download.  Not all \Traits will have one.
             Might be the same as the generating script for the corresponding \Tree.
@@ -106,12 +107,12 @@ Here are those properties:
             \item [Source] `simulated' or `empirical'
         \end{description}
     \item [Tags] Various descriptive words.
-            (See tag notes in \cref{sec:tables_trees}.  Different tags for \Trees and \Traits, though.)
+            (See tag notes in \cref{sec:tables_tree}.  Different tags for \Trees and \Traits, though.)
 \end{description}
 
 %--------------------------------------------------
 \subsection{Reference Set}
-\label{sec:tables_refsets}
+\label{sec:tables_refset}
 %--------------------------------------------------
 
 Each \Refset is a collection of \Elements (perhaps hundreds), plus some other information.
@@ -131,7 +132,7 @@ For example, I've included links to \Benchmark and \Method here, but perhaps tho
 
 %--------------------------------------------------
 \subsection{Benchmark Set}
-\label{sec:tables_benchmarks}
+\label{sec:tables_benchmark}
 %--------------------------------------------------
 
 Each \Benchmark is a collection of \Elements (perhaps dozens), linked to one specific \Task, plus some other information.
@@ -149,7 +150,7 @@ These may be updated frequently, as new \Elements are added and old ones are rem
 
 %--------------------------------------------------
 \subsection{Task}
-\label{sec:tables_tasks}
+\label{sec:tables_task}
 %--------------------------------------------------
 
 The top layer of organization is the \Task.
@@ -158,7 +159,7 @@ There won't be many, and perhaps only one for awhile (\ie state-dependent divers
 Not discussed in the original proposal (\cref{sec:proposal}) is the concept of grouping tasks or questions within them.
 For example, if the task is state-dependent diversification, there could be different sub-tasks for discrete-valued and continuous-valued traits.
 We might also want different questions for hypothesis testing (Is my trait associated with diversification shifts?) versus parameter estimation (How much higher are speciation rates for this state?).
-This latter level of detail is essential for reporting results simply (\cref{sec:tables_results}).
+This latter level of detail is essential for reporting results simply (\cref{sec:tables_result}).
 
 I think designing this layer of organization well will be quite important for \phycomb to be useful.
 But we may not know the best strategy until we see how it grows.
@@ -167,10 +168,10 @@ For the moment, let's assume that \Task is defined as specifically as necessary.
 
 %--------------------------------------------------
 \subsection{Methods}
-\label{sec:tables_methods}
+\label{sec:tables_method}
 %--------------------------------------------------
 
-\cref{sec:tables_elements,sec:tables_trees,sec:tables_traits,sec:tables_refsets,sec:tables_benchmarks,sec:tables_tasks} were all about the testing datasets themselves.
+\cref{sec:tables_element,sec:tables_tree,sec:tables_trait,sec:tables_refset,sec:tables_benchmark,sec:tables_task} were all about the testing datasets themselves.
 Now we consider the analysis methods that the tests are designed to evaluate.
 
 \begin{description}
@@ -191,7 +192,7 @@ Now we consider the analysis methods that the tests are designed to evaluate.
             \item [Statistics] `Bayes factors', `AIC', `parameter values', `model averaging', `sign test', \etc
         \end{description}
     \item [Tags] Various descriptive words. % e.g., sse, sister clades
-            (See tag notes in \cref{sec:tables_trees}.  Different tags for \Methods, though.)
+            (See tag notes in \cref{sec:tables_tree}.  Different tags for \Methods, though.)
 \end{description}
 
 Methods often come in groups, and I'm not sure how to handle this.
@@ -217,7 +218,7 @@ I'm currently leaning toward the by-hand summary or the single layer of explicit
 
 %--------------------------------------------------
 \subsection{Results}
-\label{sec:tables_results}
+\label{sec:tables_result}
 %--------------------------------------------------
 
 When a \Method is run on an \Element, the output should be a clear answer to a \Task.
@@ -236,14 +237,15 @@ The table of \Results would then have these columns:
 \end{description}
 
 It is possible that we don't need to include \Task here, if \Method is already specific enough that it applies to a single \Task.
-See discussion elsewhere about the specificity of \Methods (\cref{sec:tables_methods}) and \Tasks (\cref{sec:tables_tasks}).
+See discussion elsewhere about the specificity of \Methods (\cref{sec:tables_method}) and \Tasks (\cref{sec:tables_task}).
 
 One concern I have is that reducing each \Result to a single number would cause analyses to be simple-minded rather than nuanced.
 On the other hand, we need to keep things simple enough that we can summarize across lots of tests and methods.
 Would be good to discuss this.
 
 We will definitely need nice ways to summarize this huge table of results for users.
-I'm not sure whether this would be done within the database structure or when generating views (\cref{sec:views}).
+These summaries are called \Reports elsewhere in this document.
+But I'm not sure whether this would be done within the database structure or when generating views (\eg \cref{sec:views_report_task,sec:views_report_method}).
 Some summaries we'll want:
 \begin{itemize}
     \item Overall performance of a \Method on a \Refset for a \Task

@@ -1,41 +1,47 @@
 \section{Views}
+\label{sec:views}
 
-User interfaces.
-
-\subsection{rough}
-
-see \cref{sec:workflows_task}
-
-\label{fig:views_select_task}
-Select the desired \Task.
-We will focus on `state-dependent diversification' with `discrete traits,' but eventually there might be others.
-Still thinking about if we can have different possible Questions within a \Task, \eg `Is this trait associated with diversification differences?' versus `Are speciation and extinction rates estimated accurately?'
-
-\label{fig:views_select_method}
-Select the desired \Methods.
-Choose by model/technique (\eg bisse, sister clades) and/or statistics (\eg AIC, Bayes factors).
-Need a nice interface for this, but not too complicated.
-
-\label{fig:views_select_element}
-Select the desired \Elements.
-A few options here:
-\begin{itemize}
-    \item Those in the \Benchmark.
-    \item Those in particular \Refsets.  Select from the list of \Refsets.
-    \item Select based on attributes of \Elements, including attributes of \Trees and \Traits.  Will require a nice interface. http://webworkflow.co.uk/plugins/pfSelect/
-    \item All.  Warn how many this is.
-\end{itemize}
-
+I'm intending this section to show some examples of the web interface a user might work with.
+But it'll be time-consuming to make drawings, so maybe we'd better discuss the other things first.
+So consider this section just very rough notes for now.
 
 %--------------------------------------------------
-\subsection{\Performance report, \Task-focused}
+\subsection{Drill down to results of interest}
+\label{sec:views_task}
+%--------------------------------------------------
+
+Beginning of workflow in \cref{sec:workflows_task}.
+
+\begin{enumerate}
+
+% \label{fig:views_select_task}
+    \item Select the desired \Task.
+          We will focus on `state-dependent diversification' with `discrete traits' and probably `hypothesis testint,' but eventually there will be others.
+% Still thinking about if we can have different possible Questions within a \Task, \eg `Is this trait associated with diversification differences?' versus `Are speciation and extinction rates estimated accurately?'
+
+% \label{fig:views_select_method}
+    \item Select the desired \Methods.
+          Choose by model/technique (\eg bisse, sister clades) and/or statistics (\eg AIC, Bayes factors).
+          Need a nice interface for this, but not too complicated.
+
+% \label{fig:views_select_element}
+    \item Select the desired \Elements.  A few options here:
+        \begin{itemize}
+            \item Those in the \Benchmark.
+            \item Those in particular \Refsets.  Select from the list of \Refsets.
+            \item Select based on attributes of \Elements, including attributes of \Trees and \Traits.  Will require a nice interface. % http://webworkflow.co.uk/plugins/pfSelect/
+            \item All.  Warn how many this is.
+        \end{itemize}
+\end{enumerate}
+
+%--------------------------------------------------
+\subsection{Report for a task}
 \label{sec:views_report_task}
 %--------------------------------------------------
 
-from \cref{sec:workflows_task}
+End of workflow in \cref{sec:workflows_task}.
 
-see original proposal figure
-
+Original vision in \cref{fig:proposal_phycomb}.
 This is the single most important part of the user interface.
 
 Interactive interface:
@@ -43,9 +49,9 @@ Interactive interface:
     \item Select tags to float \Elements to top (within a \Refset)
     \item Same, but for categories (\ie the possible values within a column)
     \item Click arrow at top of column to sort on its categories
-    \item Click arrow to fold away a \Refset https://js-tutorials.com/demos/flexigrid_example_demo/
-    \item Click something to fold away or resize columns? https://js-tutorials.com/demos/flexigrid_example_demo/ http://www.guriddo.net/demo/bootstrap/
-    \item Apply a sequence of sort/filter actions.  Each refines the previous one, rather than replacing it. http://tablesorter.com/docs/, http://www.jeasyui.com/demo/main/index.php?plugin=DataGrid "multiple sorting", https://datatables.net/examples/basic_init/multi_col_sort.html (but without paging)
+    \item Click arrow to fold away a \Refset % https://js-tutorials.com/demos/flexigrid_example_demo/
+    \item Click something to fold away or resize columns? % https://js-tutorials.com/demos/flexigrid_example_demo/ http://www.guriddo.net/demo/bootstrap/
+    \item Apply a sequence of sort/filter actions.  Each refines the previous one, rather than replacing it. % http://tablesorter.com/docs/, http://www.jeasyui.com/demo/main/index.php?plugin=DataGrid "multiple sorting", https://datatables.net/examples/basic_init/multi_col_sort.html (but without paging)
     \item Clear some/all the sort/filter actions
     \item Select \Elements (rows) to hide
     \item Hide all non-floated/non-selected \Elements
@@ -54,55 +60,58 @@ Interactive interface:
     \item Table may be large.  But show the whole thing, rather than `paging' it.  Be as space-efficient as possible.
 \end{itemize}
 
-seems like jQuery is good for this?
+% seems like jQuery is good for this?
 
 Link to download CSV file (\cref{sec:downloads_report}).
 
 %--------------------------------------------------
-\subsection{\Performance report, \Method-focused}
+\subsection{Report for a method}
 \label{sec:views_report_method}
 %--------------------------------------------------
 
-from \cref{sec:workflows_method}
+See \cref{sec:workflows_method}.
 
-most functionality like \cref{sec:views_report_task}
-
-In this case, there will be a column for each \Task (instead of for each \Method; \cref{sec:views_report_method}).
+Most functionality like \cref{sec:views_report_task}.
+But in this case, there will be a column for each \Task (instead of for each \Method).
 Not sure how standard the task columns can be.
 Need to think about if all tasks/questions can be answered with one number or symbol.
 
-
 %--------------------------------------------------
-\subsection{\Element}
-%--------------------------------------------------
-
-see details of a particular \Element
-
-snazzy plot of trait on tree?
-
-%--------------------------------------------------
-\subsection{\Method}
+\subsection{See element}
 %--------------------------------------------------
 
-see details of a particular \Method
+See details of a particular \Element (\cref{sec:tables_element}).
+
+Snazzy plot of trait on tree?
+
+%--------------------------------------------------
+\subsection{See method}
+%--------------------------------------------------
+
+See details of a particular \Method (\cref{sec:tables_method}).
 
 %--------------------------------------------------
 \subsection{Download testing files}
 %--------------------------------------------------
 
-page to choose \Elements, \Refsets, \Benchmark
+View to choose \Elements, \Refsets, \Benchmark (\cref{sec:downloads_element}).
 
-page to choose \Methods
-
-%--------------------------------------------------
-\subsection{Contribute \Element}
-%--------------------------------------------------
+View to choose \Methods (\cref{sec:downloads_method}).
 
 %--------------------------------------------------
-\subsection{Contribute \Method}
+\subsection{Contribute element}
 %--------------------------------------------------
 
-form to fill out: task, refset, categories, justification
-way to upload performance results
+Form for a Contributor to provide the necessary information and files (\cref{sec:tables_element}).
 
-Administrator views?
+%--------------------------------------------------
+\subsection{Contribute method}
+%--------------------------------------------------
+
+Form for a Contributor to provide the necessary information and files (\cref{sec:tables_method}), and performance results.
+
+%--------------------------------------------------
+\subsection{Administrator}
+%--------------------------------------------------
+
+Need to consider extra tasks and Admin user would do.
