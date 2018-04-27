@@ -10,5 +10,4 @@ Developer notes:
 
 User notes:
 
-# (need to check this)
-> devtools::install_github("PhyCoMB", username = "phylosdd", subdir = "phycombR")
+> devtools::install_github("phylosdd/PhyCoMB", subdir = "phycombR")
