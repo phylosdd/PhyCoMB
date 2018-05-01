@@ -16,7 +16,7 @@ minimum proportion of tips in each state (if 0 < req < 0.5) or the minimum
 number of tips in each state (if req >= 1)}
 }
 \value{
-Vector of tip states
+The tree, with the simulated states as tip.state attribute
 }
 \description{
 Simulate a neutral binary trait on a given tree

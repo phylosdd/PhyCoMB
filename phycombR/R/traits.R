@@ -72,7 +72,7 @@ require_both_states <- function(phy_all, N = 1)
 #'        minimum proportion of tips in each state (if 0 < req < 0.5) or the minimum
 #'        number of tips in each state (if req >= 1)
 #'
-#' @return Vector of tip states
+#' @return The tree, with the simulated states as tip.state attribute
 #'
 #' @export
 neutral_trait_discrete <- function(phy, qval, req)
@@ -92,7 +92,8 @@ neutral_trait_discrete <- function(phy, qval, req)
             st <- diversitree::sim.character(phy, qval, model="mk2", x0=0)
     }
 
-    return(st)
+	phy$tip.state <- st
+    return(phy)
 }
 
 #' Simulate a neutral continuous-valued trait on a given tree
