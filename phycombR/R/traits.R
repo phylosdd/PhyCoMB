@@ -1,15 +1,20 @@
 #' Convert states from continuous to binary
 #'
 #' @param phy A tree (phylo, with tip.state attribute)
+#' @param threshold Below/Above this value the trait is 0/1, respectively
 #'
 #' @return The same tree, with tip states modified
 #'
 #' @export
-discretize_states <- function(phy)
+discretize_states <- function(phy, threshold = "median")
 {
     states_cont <- phy$tip.state
     states_disc <- states_cont * 0
-    states_disc[states_cont > median(states_cont)] <- 1
+
+    if (threshold == "median")
+        threshold <- median(states_cont)
+
+    states_disc[states_cont > threshold] <- 1
 
     phy$tip.state <- states_disc
     return(phy)
@@ -95,18 +100,19 @@ neutral_trait_discrete <- function(phy, qval, req)
 #' @param phy A tree
 #' @param rateval The rate for Brownian motion
 #' @param discretize Whether to convert the trait to binary
+#' @param ... Additional parameters to pass to \link{discretize_states}
 #'
 #' @return The tree, with the simulated states as tip.state attribute
 #'
 #' @export
-neutral_trait_continuous <- function(phy, rateval, discretize = TRUE)
+neutral_trait_continuous <- function(phy, rateval, discretize = TRUE, ...)
 {
 	st <- diversitree::sim.character(phy, rateval, model="bm")
 	names(st) <- phy$tip.label
 	phy$tip.state <- st
 
     if (discretize)
-        phy <- discretize_states(phy)
+        phy <- discretize_states(phy, ...)
 
     return(phy)
 }
