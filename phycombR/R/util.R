@@ -30,7 +30,7 @@ zfill <- function(x, z)
 #' @return A vector of labels
 #'
 #' @export
-make.labels <- function(num = 100, len = 3, seed = NULL, file = NULL)
+make_labels <- function(num = 100, len = 3, seed = NULL, file = NULL)
 {
     if (!is.null(seed))
         set.seed(seed)
