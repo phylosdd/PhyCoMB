@@ -10,9 +10,9 @@
 #' @export
 zfill <- function(x, z)
 {
-    if (z < x)
-        warning("String is already long enough.")
     nc <- nchar(x)
+    if (z < nc)
+        warning("String is already long enough.")
     zeros <- paste(rep(0, z), collapse = "")
     return(paste(substring(zeros, nchar(x) + 1, z), substring(x, 1, nchar(x)),
                  sep = ""))
