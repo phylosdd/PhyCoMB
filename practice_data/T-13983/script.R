@@ -12,4 +12,7 @@ phy_keep <- require_both_states(phy_all, 10)[1:15]
 
 write_trees(phy_keep)
 
-system("mkdir ../A-11463 ; mv s*.csv ../A-11463")
+dir.create("../A-11463")
+moveme <- list.files("./", pattern = "^s[0-9]{3}[.]csv$")
+file.copy(moveme, to="../A-11463")
+file.remove(moveme)
