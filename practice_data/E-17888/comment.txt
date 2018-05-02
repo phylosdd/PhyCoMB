@@ -1,0 +1,1 @@
+A trait that affects diversification in a BiSSE simulation.

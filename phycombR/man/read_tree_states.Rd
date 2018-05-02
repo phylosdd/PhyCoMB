@@ -4,14 +4,21 @@
 \alias{read_tree_states}
 \title{Read in tree file and states file}
 \usage{
-read_tree_states(Z)
+read_tree_states(Z = NULL, treefile = NULL, statefile = NULL)
 }
 \arguments{
 \item{Z}{The identifier (probably created with \link{zfill})}
+
+\item{treefile}{The name of a Newick tree file}
+
+\item{statefile}{The name of a CSV trait file}
 }
 \value{
 A phylo object, with states in the tip.state attribute
 }
 \description{
 Read in tree file and states file
+}
+\note{
+Provide EITHER Z OR treefile and statefile.
 }
