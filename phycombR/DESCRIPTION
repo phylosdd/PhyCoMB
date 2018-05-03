@@ -5,8 +5,14 @@ Authors@R: person("Emma", "Goldberg", email = "eeg@umn.edu", role = c("aut", "cr
 Description: A collection of functions for working with the Phylogenetic
     Comparative Methods Benchmark system.  More information about PhyCoMB is
     at https://github.com/phylosdd/PhyCoMB.
-Depends: R (>= 3.3.1), ape, diversitree
-Suggests: phytools
+Depends: R (>= 3.3.1)
+Imports:
+    ape,
+    diversitree
+Suggests:
+    parallel,
+    phangorn,
+    phytools
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

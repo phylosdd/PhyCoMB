@@ -1,4 +1,5 @@
 require("phycombR")
+require("diversitree")
 
 RunMyMethod <- function(tfile, sfile)
 {
