@@ -30,12 +30,12 @@ wipe_tree <- function(x, z)
     phy$node.label <- NULL
 
     # standard tip names
-    new_names <- paste("tip", 1:Ntip(phy), sep="")
+    new_names <- paste("tip", 1:(ape::Ntip(phy)), sep="")
     names(new_names) <- phy$tip.label
-    phy$tip.label <- new.names[phy$tip.label]
+    phy$tip.label <- new_names[phy$tip.label]
     names(phy$tip.state) <- phy$tip.label
 
     ape::write.tree(phy, file=name_treefile(Z))
-    write.table(phy$tip.state, file=name_statefile(Z),
-                col.names=F, sep=",", quote=F)
+    utils::write.table(phy$tip.state, file=name_statefile(Z), col.names=F,
+                       sep=",", quote=F)
 }

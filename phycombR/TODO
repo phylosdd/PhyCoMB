@@ -1,0 +1,4 @@
+Set up unit testing with testthat.
+
+Currently assumes user provides RunMyMethod().  This seems good in that we want
+to enforce it.  But it causes a warning note during check.

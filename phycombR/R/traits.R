@@ -12,7 +12,7 @@ discretize_states <- function(phy, threshold = "median")
     states_disc <- states_cont * 0
 
     if (threshold == "median")
-        threshold <- median(states_cont)
+        threshold <- stats::median(states_cont)
 
     states_disc[states_cont > threshold] <- 1
 

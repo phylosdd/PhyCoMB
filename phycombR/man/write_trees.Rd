@@ -11,9 +11,9 @@ write_trees(phy_all, z = 3, do_tree = TRUE, do_states = TRUE)
 
 \item{z}{The padded length of the tree's label (e.g., 3 if it's called 014)}
 
-\item{do.tree}{Whether to create a file for each tree}
+\item{do_tree}{Whether to create a file for each tree}
 
-\item{do.states}{Whether to create a file for each set of tip states}
+\item{do_states}{Whether to create a file for each set of tip states}
 }
 \description{
 Two files are written: one containing the tree (tNNN.tre), one containing

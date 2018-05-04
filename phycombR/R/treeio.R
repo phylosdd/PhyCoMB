@@ -29,8 +29,8 @@ name_statefile <- function(Z)
 #'
 #' @param phy_all A list of trees
 #' @param z The padded length of the tree's label (e.g., 3 if it's called 014)
-#' @param do.tree Whether to create a file for each tree
-#' @param do.states Whether to create a file for each set of tip states
+#' @param do_tree Whether to create a file for each tree
+#' @param do_states Whether to create a file for each set of tip states
 #'
 #' @export
 write_trees <- function(phy_all, z = 3, do_tree = TRUE, do_states = TRUE)
@@ -42,8 +42,8 @@ write_trees <- function(phy_all, z = 3, do_tree = TRUE, do_states = TRUE)
         if (do_tree)
             ape::write.tree(phy, file=name_treefile(Z))
         if (do_states)
-            write.table(phy$tip.state, file=name_statefile(Z),
-                        col.names=F, sep=",", quote=F)
+            utils::write.table(phy$tip.state, file=name_statefile(Z),
+                               col.names=F, sep=",", quote=F)
     }
 }
 
@@ -67,7 +67,7 @@ read_tree_states <- function(Z = NULL, treefile = NULL, statefile = NULL)
     }
 
     phy <- ape::read.tree(treefile)
-    tip <- read.csv(statefile, header=F, as.is=T)
+    tip <- utils::read.csv(statefile, header=F, as.is=T)
     tip <- structure(tip$V2, names=tip$V1)
     phy$tip.state <- tip[phy$tip.label]
 
@@ -88,7 +88,7 @@ read_tree_states <- function(Z = NULL, treefile = NULL, statefile = NULL)
 #' statefiles.
 #'
 #' @param treelabel Label of Trees to use
-#' @param statelabel Label of Traits to use
+#' @param traitlabel Label of Traits to use
 #'
 #' @return Boolean indicating success or failure
 #'

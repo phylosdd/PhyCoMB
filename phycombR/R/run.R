@@ -43,7 +43,7 @@ run_method <- function(methodlabel, elementlabel)
     writeme <- data.frame("Method" = methodlabel, "Element" = elementlabel,
                           "Item" = 1:n_items, "Result" = unlist(ans),
                           stringsAsFactors=F)
-    write.table(writeme, file=paste("Results/", methodlabel, "_", elementlabel,
-                                    ".csv", sep=""),
-                row.names=F, sep=",", quote=F)
+    utils::write.table(writeme, file=paste("Results/", methodlabel, "_",
+                                           elementlabel, ".csv", sep=""),
+                       row.names=F, sep=",", quote=F)
 }

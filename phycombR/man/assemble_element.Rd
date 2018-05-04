@@ -9,7 +9,7 @@ assemble_element(treelabel, traitlabel)
 \arguments{
 \item{treelabel}{Label of Trees to use}
 
-\item{statelabel}{Label of Traits to use}
+\item{traitlabel}{Label of Traits to use}
 }
 \value{
 Boolean indicating success or failure
