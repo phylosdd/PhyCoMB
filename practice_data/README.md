@@ -8,6 +8,10 @@ Two sorts of content are mixed together here, though I tried to keep them as sep
 (2) Content that I needed to make (1), or for (1) to make sense.
 Most of (2) is in `phycombR`, but it also includes some things noted below.
 
+Below, when I say "included in the database structure" I mean part of the eventual PhyCoMB database that users interact with through a web interface.
+When I say "interacting with the downloaded database" I am envisioning contributors creating and using content on their own computers (e.g., writing a new Method and running it on some Elements) before they upload clean versions to the real database structure.
+(We need to figure out a way to make this efficient, though, so not everyone needs to download everything all the time.)
+
 
 # Trees
 
@@ -37,12 +41,21 @@ For the real database, I think we might not need to store all these redundant `.
 
 # Methods
 
-todo
+Each directory named `M-xxxxx` is a _Method_.
+It is a script that has a specific structure (determined by `run_method()` in `phycombR`; we could eventually have non-R equivalents).
+(Sometimes there are also more associated files, like function definitions.
+Eventually these should be share-able across methods, but I'm not sure how yet.)
+I think everything in each `M-xxxxx` should be included in the database structure.
 
 
 # Results
 
-todo
+Each time a _Method_ is run on an _Element_, one `.csv` file is generated in the `Results/` directory.
+The structure of each file there is the same.
+I think the database structure should not store these `.csv` files explicitly.
+Instead, a contributor would upload files like this and they would be incorporated into the database's own results table.
+It is possible that we could reduce the level of detail stored, so that it is a single number for each Method-Element combination (i.e., the proportion of `TRUE` in each current `.csv` file).
+But for now it seems like it might be useful to know which specific items failed.
 
 
 # Other stuff
@@ -50,11 +63,14 @@ todo
 The `tables.html` file provides information on the various levels of organization:
 
   * Mapping between _Trees_, _Traits_, and _Elements_.  This is the same information as in the `assemble.R` files.
-  * Definition of _ReferenceSets_ and _BenchmarkSets_ and their relations to _Elements_.  This information is not present elsewhere in this example data.
   * Metadata for the components (NumItems, Type, Comment, etc.)  I could fill this out more thoroughly if it would help.
+  * Definitions of _ReferenceSets_ and _BenchmarkSets_ and their relations to _Elements_.  This information is not present elsewhere in this example data.  It may not be clear from these few examples, but in general:
+    - Each _Element_ will belong to one or more _ReferenceSets_.  There will be many _ReferenceSets_.  The main purpose of these is to provide a natural grouping of _Elements_ as they are contributed (e.g., I have an idea and run 10 tests of it).
+    - Some _Elements_ will belong to one or more _BenchmarkSets_.  There will be many fewer _BenchmarkSets_ than _ReferenceSets_.  It could be that the entire contents of a _ReferenceSet_ will be in the same _BenchmarkSet_, but most of the time it will just be select _Elements_.  The main purpose of these is to provide a small sample of tests chosen to be effective together.
+    - There will be only a handful of _Tasks_.  Each will consist of several _BenchmarkSets_.
 
 The `report.R` file is a placeholder for now.
-I could fill it in to produce summaries like it would be nice for users to browse on the database website eventually.
+I could fill it in to produce summaries of the results, to illustrate how it would be nice for users to browse on the database website eventually.
 
 In `downloads/` are files that were obtained from elsewhere.
 They are not directly useable for our analyses, but they are the raw material for some Trees or Traits.
