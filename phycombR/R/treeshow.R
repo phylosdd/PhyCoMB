@@ -1,3 +1,5 @@
+### Not part of the package yet! ###
+
 #' Visualize a tree.
 show.tree <- function(phy, title = NA, states = c(0, 1), adj = c(0.5, 0.5), 
                       tip.colors = c("#440154FF", "#35B779FF"))
