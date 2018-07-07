@@ -24,11 +24,14 @@ Each \Element consists of one \Tree (\cref{sec:tables_tree}), optionally one \Tr
     \item[Number of items] Positive integer.
             It's determined by the combination of \Tree and \Trait, but the Contributor will provide this info.
             % Could get 50 elements via 50 trees and no traits, or via 1 tree and 50 traits, or via 50 trees and 50 traits.
+    \item[Correct outcomes] What answer should be obtained.
+            This will be compared against the output of \Methods.
+            Each \Task will need to have a correct outcome defined.
     \item[Contribution info] (could be same or different from info for \Tree and/or \Trait)
         \begin{description}
             \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Element is created
-            \item[Comment] a few sentences provided by the Contributor
+            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
         \end{description}
 \end{description}
 
@@ -54,7 +57,7 @@ Here are those properties:
         \begin{description}
             \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Tree is created
-            \item[Comment] a few sentences provided by the Contributor
+            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
         \end{description}
     \item[Elements] The \Element(s) to which the \Tree belongs.
     \item[Traits] The \Trait(s) that use this \Tree.  (Not sure if we need this.)
@@ -98,7 +101,7 @@ Here are those properties:
         \begin{description}
             \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Trait is created
-            \item[Comment] a few sentences provided by the Contributor
+            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
         \end{description}
     \item[Trees] The \Tree(s) to which the \Trait corresponds.
     \item[Columns of trait info] Will be figured out as we go along, but likely ones are:
@@ -143,8 +146,9 @@ These may be updated frequently, as new \Elements are added and old ones are rem
     \item[Name] A short phrase that identifies the \Benchmark to a human.
     \item[Description] An explanation of what this \Benchmark is designed to test.
     \item[Task] Link to the \Task.
-    \item[Elements] Link to \Element in the \Benchmark.  It should also be easy to obtain the total number of \Elements and their \Refset membership.
+    \item[Elements] Link to \Element(s) in the \Benchmark.  It should also be easy to obtain the total number of \Elements and their \Refset membership.
     \item[Methods] Link to \Method(s) for which this \Benchmark is relevant.
+    \item[Correct outcome] What answer should be obtained by an effective \Method, for a particular \Task.  This will be the same for all \Elements in the \Benchmark.
     \item[History] Notes from Contributors who have created or changed the \Benchmark.  (More than one column, but I'm not sure of the best format.)
 \end{description}
 
@@ -182,7 +186,7 @@ Now we consider the analysis methods that the tests are designed to evaluate.
         \begin{description}
             \item[Contributor] a registered user (\cref{sec:users_contributor})
             \item[Date] auto-populated when \Method is created
-            \item[Comment] a few sentences provided by the Contributor
+            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
         \end{description}
     \item[Scope] Some indication of what this method can be used on, but not sure exactly what.
             Could be a list of \Refsets.  Definitely needs to map to \Tasks, either directly or indirectly.

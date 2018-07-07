@@ -1,1 +1,3 @@
-A trait that affects diversification in a BiSSE simulation.
+bisse-simulated trait
+
+A trait that affects speciation in a BiSSE simulation.

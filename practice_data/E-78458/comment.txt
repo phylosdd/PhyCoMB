@@ -1,0 +1,6 @@
+neutral threshold trait on empirical tree
+
+trait: continuous-valued, then thresholded at median
+tree: empirical coral
+trait does not affect lineage diversification
+

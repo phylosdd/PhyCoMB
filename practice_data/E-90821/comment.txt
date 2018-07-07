@@ -1,1 +1,5 @@
-A slow neutral threshold trait is evolved on the coral empirical tree.
+medium neutral trait on birth-death tree
+
+trait: discrete-valued
+tree: simple birth-death
+trait does not affect lineage diversification

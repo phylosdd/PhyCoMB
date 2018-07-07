@@ -1,0 +1,4 @@
+empirical data, different tree scalings
+
+tree: empirical coral, rescaled in various ways
+trait: a real one

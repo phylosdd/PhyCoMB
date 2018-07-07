@@ -1,0 +1,5 @@
+95% CI from BiSSE MCMC
+
+Fit BiSSE model to data with MCMC.
+Compute the 95% credibility interval of the difference in net diversification rates for the two states.
+If this interval excludes zero, conclude state-dependent diversification.
