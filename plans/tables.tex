@@ -1,10 +1,11 @@
-\section{Database Tables}
+\section{Database Tables and Forms}
 \label{sec:tables}
 
-I'm assuming the information would be stored in a relational database.
-Below is what could be in the tables.
+This section defines the fields needed for each type of information (\Element, \Tree, \etc).
+Fields marked `[auto]' should be automatically populated when the contribution is saved.
+All other fields should be provided by the Contributor via an input form.
 
-I think it's realistic to settle on the set of tables and their relationships early on.
+I think it's realistic to settle on the set of database tables and their relationships early on.
 But some of the content in the tables (columns, allowable values for some columns) will need to be adjusted as we go along.
 
 %--------------------------------------------------
@@ -13,65 +14,86 @@ But some of the content in the tables (columns, allowable values for some column
 %--------------------------------------------------
 
 Each \Element consists of one \Tree (\cref{sec:tables_tree}), optionally one \Trait (\cref{sec:tables_trait}), and some other information.
-% Reason for \Tree and \Trait being separate entities, rather than only parts of \Element, is so they can be reused, \eg same \Tree with different \Traits makes for different \Elements.
+There should be a form for a Contributor to create a new \Element.
+% The reason for \Tree and \Trait being separate entities, rather than only parts of \Element, is so they can be reused, \eg same \Tree with different \Traits makes for different \Elements.
 
 \begin{description}
-    \item[Unique ID] Arbitrary, \eg E-47295.  Auto-generated when created.
+    \item[Unique ID] Arbitrary, \eg E-47295. [auto]
+    \item[Date] When this was created. [auto]
+    \item[Contributor] Who created this. [auto]
+            Can be filled in automatically because a Contributor must be logged in to add anything new to the database (\cref{sec:users_contributor}).
     \item[Tree] Link to one \Tree.
+            An existing \Tree could be selected.  (There will be too many Trees to present them all as a list.  Perhaps the Contributor could start to type the Tree's UniqueID or Name and the options could auto-complete.)
+            Or, a new \Tree could be created along with this \Element (see \cref{sec:tables_tree}).
     \item[Trait] Link to one \Trait, or empty.
-    \item[Reference set] Link to one or more \Refsets (\cref{sec:tables_refset}) that include this \Element.
-    \item[Benchmark] Link to \Benchmarks (\cref{sec:tables_benchmark}) that include this \Element, if any.
+            (Some Tasks may not require a Trait in each Element.  But for our initial tasks, there will always be one.)
+            An existing \Trait could be selected.  (Again, there will be too many Traits to present them all as a list.)
+            Or, a new \Trait could be created along with this \Element (see \cref{sec:tables_trait}).
+            We will need a way to check that the species names agree in a \Trait and \Tree that are part of the same \Element.
+    \item[Name] A brief description of the \Element.
+            Free text with a maximum of 50 characters.  Might not be unique.
+    \item[Comment] Any other text the Contributor would like to provide about the \Element.
+            Free text.  Formatting should be preserved.
     \item[Number of items] Positive integer.
-            It's determined by the combination of \Tree and \Trait, but the Contributor will provide this info.
+            To avoid ambiguity, the Contributor will provide this.
+            But the value should be sanity-checked against the number of items in the \Element's \Tree and \Trait.
             % Could get 50 elements via 50 trees and no traits, or via 1 tree and 50 traits, or via 50 trees and 50 traits.
-    \item[Correct outcomes] What answer should be obtained.
-            This will be compared against the output of \Methods.
-            Each \Task will need to have a correct outcome defined.
-    \item[Contribution info] (could be same or different from info for \Tree and/or \Trait)
-        \begin{description}
-            \item[Contributor] a registered user (\cref{sec:users_contributor})
-            \item[Date] auto-populated when \Element is created
-            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
-        \end{description}
+    \item[Reference set] Link to one or more \Refsets (\cref{sec:tables_refset}) that this \Element will belong to.
+    % \item[Benchmark] Link to \Benchmarks (\cref{sec:tables_benchmark}) that include this \Element, if any.
+    \item[Correct answer] What answer should be obtained.
+            The \Element will be associated with one or more \Tasks.
+            (This is determined by the \Refsets selected above, which each map to \Tasks.)
+            For each \Task, there is a correct answer that should be obtained from the \Element.
+            Ideally, the Contributor would be presented with a small table showing each relevant \Task, with a box to provide the corresponding `Correct answer`.
+            % This will be compared against the output of \Methods.
+            % Each \Task will need to have a correct outcome defined.
 \end{description}
 
-It will be common for a user to download one or more \Elements (\cref{sec:downloads_element}).
+% It will be common for a user to download one or more \Elements (\cref{sec:downloads_element}).
+
+We will want to be able to find all the \Elements to which a \Tree or \Trait belongs.
+From this, we can find all \Trees that use a \Trait, and all \Traits that go with a \Tree.
 
 %--------------------------------------------------
 \subsection{Trees}
 \label{sec:tables_tree}
 %--------------------------------------------------
 
+It should only be possible to create a new \Tree as part of a new \Element.
+Thus, the form for these \Tree fields should be part of the form for contributing an \Element.
+
 Each \Tree object is actually a set of trees, all with the same properties.
-Here are those properties:
 
 \begin{description}
-    \item[Unique ID] Arbitrary, \eg T-83247.  Auto-generated when created.
-    \item[The trees] Each individual tree is itself stored as a \href{http://evolution.genetics.washington.edu/phylip/newicktree.html}{Newick string}.
+    \item[Unique ID] Arbitrary, \eg T-83247. [auto]
+    \item[Date] When this was created. [auto]
+    \item[Contributor] Who created this. [auto]
+    \item[Number of items] The number of unique trees uploaded. [auto]
+    \item[Number of tips] The number of tips per tree.  Could be a single number or a range. [auto]
+    \item[Name] A brief description of the \Tree.
+            Free text with a maximum of 50 characters.  Might not be unique.
+    \item[Comment] Any other text the Contributor would like to provide about the \Tree.
+            Free text.  Formatting should be preserved.
+    \item[Source] A text file uploaded by the Contributor.
+            Usually, this will be a script that generates the tree(s) or downloads them.
+            If that is not possible, the file can contain notes explaining how to get the trees.
+    \item[Tree files] Each individual tree is itself stored as a \href{http://evolution.genetics.washington.edu/phylip/newicktree.html}{Newick string}.
             Those strings could reside directly within the database; they can be quite long, though, which might be troublesome.
             Or the database entry could be a link to text file(s) containing the trees; this might be better because such files will frequently be downloaded by users (\cref{sec:downloads_element}).
-    \item[Generating script] The code used to simulate or otherwise create the trees.
-            A file to download.  Not all \Trees will have one.
-    \item[Number of trees] Positive integer.
-    \item[Contribution info]:
-        \begin{description}
-            \item[Contributor] a registered user (\cref{sec:users_contributor})
-            \item[Date] auto-populated when \Tree is created
-            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
-        \end{description}
-    \item[Elements] The \Element(s) to which the \Tree belongs.
-    \item[Traits] The \Trait(s) that use this \Tree.  (Not sure if we need this.)
-    \item[Columns of tree info] Will be figured out as we go along, but likely ones are:
-        \begin{description}
-            \item [Number of tips] single number or numeric range
-            \item [Source] `simulated' or `empirical'
-        \end{description}
-    \item [Tags] Various descriptive words.
-        The idea with tags is that they are not necessarily alternatives (like `simulated' versus `empirical'), and there could be any number per \Tree.
-        With use, we might realize that some tags can be converted to columns, and maybe vice versa.
-        Tags probably involves two extra database tables:
-        (1) columns are TagID and TagName, one row per tag;
-        (2) columns are TreeID and TagID, one row per tag per tree.
+            The Contributor will provide one text file per tree, so we should allow multiple files or one zipped file to be uploaded.
+            % Or all the trees could be in a single text file, each on a new line.
+    \item[Keywords] A list of options, from which the Contributor will choose one or more.
+            We will want to be able to search/filter \Trees based on these values.
+            The exact keywords will be determined as we go along, but a starting point is:
+                `simulated',
+                `empirical',
+                `penalized likelihood'
+    % \item [Tags] Various descriptive words.
+    %     The idea with tags is that they are not necessarily alternatives (like `simulated' versus `empirical'), and there could be any number per \Tree.
+    %     With use, we might realize that some tags can be converted to columns, and maybe vice versa.
+    %     Tags probably involves two extra database tables:
+    %     (1) columns are TagID and TagName, one row per tag;
+    %     (2) columns are TreeID and TagID, one row per tag per tree.
 \end{description}
 
 %--------------------------------------------------
@@ -79,38 +101,49 @@ Here are those properties:
 \label{sec:tables_trait}
 %--------------------------------------------------
 
+It should only be possible to create a new \Trait as part of a new \Element.
+Thus, the form for these \Trait fields should be part of the form for contributing an \Element.
+
 Each \Trait object consists of at least one trait value per species.
 There could be multiple such sets in one \Trait object, \eg when simulating data so that each tree in a \Tree goes with one trait set in a \Trait.
-
-A \Trait isn't useful on its own---it only makes sense when associated with a \Tree.
-A \Trait will usually only correspond to one \Tree, but that's not required.
-For example, if empirical data are used to make different \Trees with different phylogenetic inference methods, we would have many \Trees and one \Trait.
-
+% A \Trait isn't useful on its own---it only makes sense when associated with a \Tree.
+% A \Trait will usually only correspond to one \Tree, but that's not required.
+% For example, if empirical data are used to make different \Trees with different phylogenetic inference methods, we would have many \Trees and one \Trait.
 All the trait sets within a \Trait have the same properties.
-Here are those properties:
 
 \begin{description}
-    \item[Unique ID] Arbitrary, \eg A-57387.  Auto-generated when created.
-    \item[The traits] Each set of traits is simply a list of numbers, labeled by tip/species name.
-            As for \Trees (\cref{sec:tables_tree}), this info could reside directly within the database or in a linked text file (\eg CSV), which will frequently be downloaded by users (\cref{sec:downloads_element}).
-    \item[Generating script] The code used to simulate or otherwise create the traits.
-            A file to download.  Not all \Traits will have one.
-            Might be the same as the generating script for the corresponding \Tree.
-    \item[Number of trait sets] Positive integer.  Probably either 1, or one per tree.
-    \item[Contribution info] (might or might not be identical to the corresponding \Tree)
-        \begin{description}
-            \item[Contributor] a registered user (\cref{sec:users_contributor})
-            \item[Date] auto-populated when \Trait is created
-            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
-        \end{description}
-    \item[Trees] The \Tree(s) to which the \Trait corresponds.
-    \item[Columns of trait info] Will be figured out as we go along, but likely ones are:
-        \begin{description}
-            \item [Numerical type] `discrete' or `continuous'
-            \item [Source] `simulated' or `empirical'
-        \end{description}
-    \item [Tags] Various descriptive words.
-            (See tag notes in \cref{sec:tables_tree}.  Different tags for \Trees and \Traits, though.)
+    \item[Unique ID] Arbitrary, \eg A-57387. [auto]
+    \item[Date] When this was created. [auto]
+    \item[Contributor] Who created this. [auto]
+    % \item[Number of trait sets] Positive integer.  Probably either 1, or one per tree.
+    \item[Name] A brief description of the \Trait.
+            Free text with a maximum of 50 characters.  Might not be unique.
+    \item[Comment] Any other text the Contributor would like to provide about the \Trait.
+            Free text.  Formatting should be preserved.
+    \item[Source] A text file uploaded by the Contributor.
+            Usually, this will be a script that generates the trait values or downloads them.
+            It might be the same as the generating script for a corresponding \Tree.
+            If there is no script, the file can contain notes explaining how to get the trait values.
+    \item[Traits files] Each set of traits is simply a list of numbers, labeled by tip/species name.
+            As for \Trees (\cref{sec:tables_tree}), the state info could reside directly within the database or in a linked text file (\eg CSV). % which will frequently be downloaded by users (\cref{sec:downloads_element}).
+            The Contributor will provide one text file per set of traits (\ie per tree), so we should allow multiple files or one zipped file to be uploaded.
+            % Or all the trait values could be in a single text file, each as a column.
+    \item[Keywords] A list of options, from which the Contributor will choose one or more.
+            We will want to be able to search/filter \Traits based on these values.
+            The exact keywords will be determined as we go along, but a starting point is:
+                `empirical',
+                `simulated',
+                `continuous',
+                `discrete',
+                `binary',
+                `BM',
+                `OU',
+                `threshold',
+                `Mk',
+                `SSE',
+                `neutral',
+                `fast',
+                `slow'
 \end{description}
 
 %--------------------------------------------------
@@ -179,27 +212,37 @@ For the moment, let's assume that \Task is defined as specifically as necessary.
 Now we consider the analysis methods that the tests are designed to evaluate.
 
 \begin{description}
-    \item[Unique ID] Arbitrary, \eg M-93925.  Auto-generated when created.
-    \item[Name] A few words describing the approach. % (Or not?  Or should \Trees, \Traits, \Elements, \etc all have this?)
-    \item[Analysis script] The code used to run the method.  A file to download.
-    \item[Contribution info]:
-        \begin{description}
-            \item[Contributor] a registered user (\cref{sec:users_contributor})
-            \item[Date] auto-populated when \Method is created
-            \item[Comment] provided by the Contributor: 50 character summary, then a few lines of free text
-        \end{description}
-    \item[Scope] Some indication of what this method can be used on, but not sure exactly what.
-            Could be a list of \Refsets.  Definitely needs to map to \Tasks, either directly or indirectly.
-    \item[Columns of methods info] Will be figured out as we go along, but likely ones are:
-        \begin{description}
-            \item [Technique] `model-based' or `descriptive' (need better terminology)
-            \item [Statistics] `Bayes factors', `AIC', `parameter values', `model averaging', `sign test', \etc
-        \end{description}
-    \item [Tags] Various descriptive words. % e.g., sse, sister clades
-            (See tag notes in \cref{sec:tables_tree}.  Different tags for \Methods, though.)
+    \item[Unique ID] Arbitrary, \eg M-93925. [auto]
+    \item[Date] When this was created. [auto]
+    \item[Contributor] Who created this. [auto]
+    \item[Name] A brief description of the \Method.
+            Free text with a maximum of 50 characters.  Might not be unique.
+    \item[Comment] Any other text the Contributor would like to provide about the \Method.
+            Free text.  Formatting should be preserved.
+    \item[Task] Choose from the list of existing \Tasks that this \Method is be used for.
+            I'm pretty sure that each \Method can only be used for a single \Task, because the \Method can only return a single value.
+            The \Task therefore determine the return value type (Boolean or numeric) of the \Method.
+    \item[Analysis script] The code used to run the method.  One or more text files.
+    \item[Allied methods] Note any existing \Methods that are very closely related to this one.
+            There may be too many \Methods to present them all as a list.  Perhaps the Contributor could start to type the UniqueID or Name and the options could auto-complete.
+            (These links will need to be updated automatically, as well.  For example, when I contribute Method 2 today I can note that it is allied with Method 1 that I created yesterday.  But then the link from Method 1 to 2 should be created automatically.)
+    \item[Model-based] Choose `yes' or `no'.
+    \item[Keywords] A list of options, from which the Contributor will choose one or more.
+            We will want to be able to search/filter \Methods based on these values (as well as on `Model-based').
+            The exact keywords will be determined as we go along, but a starting point is:
+                `Akaike information criterion',
+                `Bayes factor',
+                `bootstrap',
+                `model averaging',
+                `parameter estimates',
+                `posterior predictive',
+                `randomization test',
+                `semi-parametric',
+                `sign test'
 \end{description}
 
 Methods often come in groups, and I'm not sure how to handle this.
+Any thoughts or suggestions appreciated.
 For example, the same basic procedure could be tweaked in a few ways (in the algorithm, or the type of stats used), and testing would reveal which was best.
 Some possible approaches:
 \begin{itemize}
@@ -212,13 +255,14 @@ Some possible approaches:
     \item Allow one \Method to link to others.
           But then get into issues of how similar is similar enough to link (\eg `coded like' versus `inspired by').
           And then there would be lots of code reuse among scripts of different-but-related \Methods.
+          [note: this is the `Allied methods' field specified above]
     \item Allow multiple analysis scripts and/or libraries of shared functions per \Method.
           Seems likely to get messy, though, especially when summarizing results.
     \item Allow one explicit level of hierarchy in \Methods.
           Contributor groups them together if they share code, but each is numbered separately and results are reported separately for each variant.
 \end{itemize}
 
-I'm currently leaning toward the by-hand summary or the single layer of explicit hierarchy, but other thoughts would be very welcome.
+% I'm currently leaning toward the by-hand summary or the single layer of explicit hierarchy.
 
 %--------------------------------------------------
 \subsection{Results}
@@ -226,22 +270,39 @@ I'm currently leaning toward the by-hand summary or the single layer of explicit
 %--------------------------------------------------
 
 When a \Method is run on an \Element, the output should be a clear answer to a \Task.
-This answer is a single \Result.
-Probably it will be a number (\eg proportion of trees that yielded an answer of `yes'; overall difference in parameter estimates), but perhaps it could be a binary or categorical answer.
+This is a \Result.
+There will actually be a value for each Item in the \Element (\eg ten numbers if there are ten individual trees)---this is what the Contributor will provide.
+We'll want \phycomb to retain this level of detail so it is available for download.
+But in the \phycomb web interface, we will usually want to see a summary in which each Method-Element combination is reduced to a single value, probably the proportion of Items that yielded the correct answer (see the Outcome column in \cref{fig:ui_method_performance}).
 
-The table of \Results would then have these columns:
+I think the best thing here will be for a Contributor to upload a CSV file with all the information needed to compute one or more \Results.
+The columns should be:
+\begin{itemize}
+    \item Method (its Unique ID)
+    \item Element (its Unique ID)
+    \item Item (1, 2, 3, \ldots)
+    \item Value (TRUE/FALSE or a number)
+\end{itemize}
+
+That uploaded file will need to be checked before the contents are accepted.  Validation should include:
+\begin{itemize}
+    \item Each \Method exists
+    \item Each \Element exists
+    \item All the Items for that \Element are included
+    \item The Value is of appropriate type (Boolean or numeric) for the \Method and \Task
+    \item The Value does not disagree with a value that was already reported
+\end{itemize}
+
+The form for uploading \Results can be minimal: just a box for CSV file(s).
+
+The following fields should be automatically filled in when a new \Result is created.
 \begin{description}
-    \item[Unique ID] of the \Result
-    \item[Method] Link to \Method
-    \item[Element] Link to \Element
-    \item[Task] Link to \Task
-    \item[Value] The answer
-    \item[Detail] Maybe we should store the answer on each \Tree/\Trait within the \Element?
-          Potentially useful to have for an end user, but maybe too much detail for \phycomb to interpret.
+    \item[Date] When this was created. [auto]
+    \item[Contributor] Who created this. [auto]
 \end{description}
 
-It is possible that we don't need to include \Task here, if \Method is already specific enough that it applies to a single \Task.
-See discussion elsewhere about the specificity of \Methods (\cref{sec:tables_method}) and \Tasks (\cref{sec:tables_task}).
+We will want to be able to connect each \Element with the \Methods that run on it.
+The \Results table provides this link.
 
 One concern I have is that reducing each \Result to a single number would cause analyses to be simple-minded rather than nuanced.
 On the other hand, we need to keep things simple enough that we can summarize across lots of tests and methods.
