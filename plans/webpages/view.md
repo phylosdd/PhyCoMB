@@ -18,7 +18,7 @@ So each section should only appear after selections have been made above it.
 Specify the macroevolutionary question of interest, or the "task" that methods will undertake.
 Choose one of the following:
 
-  | ID | Question | Num Methods
+. | ID | Question | Num Methods
 - | -- | -------- | -----------
 x | Task-SDD-test   | Discrete trait and lineage diversification: Is there an association? | 2
   | Task-SDD-amount | Discrete trait and lineage diversification: How large is the effect? | 0
@@ -38,8 +38,8 @@ Choose one or more of the following:
 
 [x] | ID | Name | Model-based | Num Elements
 --- | -- | ---- | ----------- | ------------
-x | M-25339 | yes | 95% CI from BiSSE MCMC
-x | M-82344 | no | original FiSSE
+x | M-25339 | 95% CI from BiSSE MCMC | yes | 4
+x | M-82344 | original FiSSE | no | 5
 
 _[To Michal:
 Again, the preceding table should not be hard-coded like my example above.
@@ -55,27 +55,28 @@ We will definitely want ID and Name, and probably some other columns too, like M
 
 Specify which testing datasets to include.
 
-[x] Benchmark Set: a pre-defined set of testing datasets
-[ ] Reference Sets: choose your own types of testing datasets
-[ ] Particular Elements: choose only the specific testing datasets you want
+- [x] Benchmark Set: a pre-defined set of testing datasets
+- [ ] Reference Sets: choose your own types of testing datasets
+- [ ] Particular Elements: choose only the specific testing datasets you want
 
 _[To Michal:
+Only one of the three options should be selected.
 The Benchmark radio button should be selected by default.
 That's enough for now, but eventually the other options will be useful.
-Below are examples of what would happen if the user selects on of them.
+Below are examples of what would happen if the user selects the second or third.
 ]_
 
-[ ] Benchmark Set: a pre-defined set of testing datasets
-[x] Reference Sets: choose your own types of testing datasets
-[ ] Particular Elements: choose only the specific testing datasets you want
+- [ ] Benchmark Set: a pre-defined set of testing datasets
+- [x] Reference Sets: choose your own types of testing datasets
+- [ ] Particular Elements: choose only the specific testing datasets you want
 
 [ ] | ID | BenchmarkSet | Name | Num Elements
 --- | -- | ------------ | ---- | ------------
- | R-10013 | | divergence time estimation with empirical trees | 1
- | R-23473 | Power | bisse sims, same param values, vary tree age | 1
- | R-31990 | | bisse assumptions are met | 1
- | R-49185 | FalsePositive | fast discrete neutral traits on empirical trees | 1
- | R-66447 | FalsePositive | slow continuous neutral traits on empirical trees | 1
+. | R-10013 | | divergence time estimation with empirical trees | 1
+. | R-23473 | Power | bisse sims, same param values, vary tree age | 1
+. | R-31990 | | bisse assumptions are met | 1
+. | R-49185 | FalsePositive | fast discrete neutral traits on empirical trees | 1
+. | R-66447 | FalsePositive | slow continuous neutral traits on empirical trees | 1
 
 _[To Michal:
 I've filled in this table based on our practice data.
@@ -84,13 +85,13 @@ The first column is for the user to select rows.
 The last column should show the total number of Elements in the ReferenceSet.
 ]_
 
-[ ] Benchmark Set: a pre-defined set of testing datasets
-[ ] Reference Sets: choose your own types of testing datasets
-[x] Particular Elements: choose only the specific testing datasets you want
+- [ ] Benchmark Set: a pre-defined set of testing datasets
+- [ ] Reference Sets: choose your own types of testing datasets
+- [x] Particular Elements: choose only the specific testing datasets you want
 
 _[To Michal:
-For advanced users only.
-This should show a text entry box where the user can provide the IDs of specific Elements, or upload a file containing those IDs.
+This option if for advanced users only.
+It should show a text entry box where the user can provide the IDs of specific Elements, or upload a file containing those IDs.
 There should also be a link to get a (very large) table of information about all the Elements---like the "Elements table" in the "search_all" view of the current website.
 ]_
 
