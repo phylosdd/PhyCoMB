@@ -18,10 +18,10 @@ So each section should only appear after selections have been made above it.
 Specify the macroevolutionary question of interest, or the "task" that methods will undertake.
 Choose one of the following:
 
-. | ID | Question | Num Methods
-- | -- | -------- | -----------
+[] | ID | Question | Num Methods
+-- | -- | -------- | -----------
 x | Task-SDD-test   | Discrete trait and lineage diversification: Is there an association? | 2
-  | Task-SDD-amount | Discrete trait and lineage diversification: How large is the effect? | 0
+. | Task-SDD-amount | Discrete trait and lineage diversification: How large is the effect? | 0
 
 _[To Michal:
 The preceding table should not be hard-coded like my example above.
