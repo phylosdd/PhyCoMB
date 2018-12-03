@@ -18,7 +18,7 @@ So each section should only appear after selections have been made above it.
 Specify the macroevolutionary question of interest, or the "task" that methods will undertake.
 Choose one of the following:
 
-[] | ID | Question | Num Methods
+[] | ID | Name | Num Methods
 -- | -- | -------- | -----------
 x | Task-SDD-test   | Discrete trait and lineage diversification: Is there an association? | 2
 . | Task-SDD-amount | Discrete trait and lineage diversification: How large is the effect? | 0
@@ -26,7 +26,7 @@ x | Task-SDD-test   | Discrete trait and lineage diversification: Is there an as
 _[To Michal:
 The preceding table should not be hard-coded like my example above.
 The first column should be something like a radio button, so that the user can select one Task.
-The ID and Question columns should be filled in from the information about Tasks in the database.
+The ID and Name columns should be filled in from the information about Tasks in the database.
 The Num Methods column should be determined by the number of Methods in the database for that Task.
 For our practice data, currently only Task-SDD-test is applicable.
 ]_

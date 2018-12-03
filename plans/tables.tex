@@ -155,7 +155,7 @@ Each \Refset is a collection of \Elements (perhaps hundreds), plus some other in
 
 \begin{description}
     \item[Unique ID] Arbitrary, \eg R-43853.  Auto-generated when created.
-    \item[Name] A short phrase that identifies the \Refset to a human.  Could be instead of the Unique ID.
+    \item[Name] A short phrase that identifies the \Refset to a human.
     \item[Description] An explanation of what this \Refset is designed to test.
     \item[Elements] Link to \Element(s) in the \Refset.  It should also be easy to obtain the total number of \Elements.
     \item[Benchmarks] Link to \Benchmark(s) that contain parts of this \Refset, if any.
@@ -202,6 +202,12 @@ I think designing this layer of organization well will be quite important for \p
 But we may not know the best strategy until we see how it grows.
 So we'll need more discussions and probably some flexibility here.
 For the moment, let's assume that \Task is defined as specifically as necessary.
+This suggests using only the following fields:
+
+\begin{description}
+    \item[Unique ID] There won't be many of them, so we could have meaningful names.
+    \item[Name] A short phrase that identifies the \Task to a human.
+\end{description}
 
 %--------------------------------------------------
 \subsection{Methods}
