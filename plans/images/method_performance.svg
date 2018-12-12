@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9650369"
+     inkscape:zoom="2.7554106"
      inkscape:cx="232.01694"
-     inkscape:cy="151.67057"
+     inkscape:cy="232.25066"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -700,7 +700,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -852,7 +852,7 @@
          sodipodi:role="line"
          id="tspan3762-2"
          x="165"
-         y="2111.1096">Comment</tspan></text>
+         y="2111.1096">Name</tspan></text>
     <path
        sodipodi:type="star"
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#888a85;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.57266164;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
@@ -1194,7 +1194,7 @@
          sodipodi:role="line"
          id="tspan5681"
          x="110"
-         y="2014.8596">Is this trait associated with a diversification difference?</tspan></text>
+         y="2014.8596">Discrete trait and lineage diversification: Is there an association?</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1240,36 +1240,36 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="82.5"
+       x="138.5"
        y="2234.8596"
        id="text5788"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5790"
-         x="82.5"
+         x="138.5"
          y="2234.8596">NumTips</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="151.25"
+       x="207.25"
        y="2234.8596"
        id="text5792"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5794"
-         x="151.25"
+         x="207.25"
          y="2234.8596">Source</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="206.25"
+       x="82.25"
        y="2234.8596"
        id="text5796"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5798"
-         x="206.25"
-         y="2234.8596">Comment</tspan></text>
+         x="82.25"
+         y="2234.8596">Name</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1306,24 +1306,24 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="82.5"
+       x="138.5"
        y="2276.1096"
        id="text5813"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5815"
-         x="82.5"
+         x="138.5"
          y="2276.1096">36-1221</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="82.5"
+       x="138.5"
        y="2248.6096"
        id="text5817"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5819"
-         x="82.5"
+         x="138.5"
          y="2248.6096">358</tspan></text>
     <path
        sodipodi:type="star"
@@ -1357,7 +1357,7 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m 82.499992,1946.1096 -20.625,11.9079 0,-23.8157 z"
-       transform="matrix(0,0.29042691,-0.38870249,0,885.50217,2210.8994)"
+       transform="matrix(0,0.29042691,-0.38870249,0,941.50217,2210.8994)"
        inkscape:transform-center-y="0.99828435" />
     <path
        sodipodi:type="star"
@@ -1374,51 +1374,51 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m 82.499992,1946.1096 -20.625,11.9079 0,-23.8157 z"
-       transform="matrix(0,0.29042691,-0.38870249,0,944.23956,2210.8994)"
+       transform="matrix(0,0.29042691,-0.38870249,0,1000.2396,2210.8994)"
        inkscape:transform-center-y="0.99828435" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="151.25"
+       x="207.25"
        y="2276.1096"
        id="text5848"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5850"
-         x="151.25"
+         x="207.25"
          y="2276.1096">simulated</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="151.25"
+       x="207.25"
        y="2248.6096"
        id="text5852"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5854"
-         x="151.25"
+         x="207.25"
          y="2248.6096">empirical</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="206.25"
+       x="82.25"
        y="2248.6096"
        id="text5856"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5858"
-         x="206.25"
+         x="82.25"
          y="2248.6096">corals</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="206.25"
+       x="82.25"
        y="2276.1096"
        id="text5860"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5862"
-         x="206.25"
+         x="82.25"
          y="2276.1096">bisse sim</tspan></text>
     <text
        xml:space="preserve"
@@ -1434,35 +1434,35 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="82.5"
+       x="138.5"
        y="2262.3596"
        id="text5817-1"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5819-9"
-         x="82.5"
+         x="138.5"
          y="2262.3596">358</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="151.25"
+       x="207.25"
        y="2262.3596"
        id="text5852-0"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5854-0"
-         x="151.25"
+         x="207.25"
          y="2262.3596">empirical</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="206.25"
+       x="82.25"
        y="2262.3596"
        id="text5856-0"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5858-2"
-         x="206.25"
+         x="82.25"
          y="2262.3596">corals</tspan></text>
     <text
        xml:space="preserve"
@@ -1498,25 +1498,25 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="343.75"
+       x="411.75"
        y="2234.8596"
        id="text5944"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5946"
-         x="343.75"
+         x="411.75"
          y="2234.8596">Type</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="398.75"
+       x="342.75"
        y="2234.8596"
        id="text5948"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5950"
-         x="398.75"
-         y="2234.8596">Comment</tspan></text>
+         x="342.75"
+         y="2234.8596">Name</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1553,68 +1553,68 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="343.75"
+       x="411.75"
        y="2248.6096"
        id="text5964"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5966"
-         x="343.75"
+         x="411.75"
          y="2248.6096">threshold</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="343.75"
+       x="411.75"
        y="2262.3596"
        id="text5968"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5970"
-         x="343.75"
+         x="411.75"
          y="2262.3596">discrete</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="343.75"
+       x="411.75"
        y="2276.1096"
        id="text5972"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5974"
-         x="343.75"
+         x="411.75"
          y="2276.1096">discrete</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="398.75"
+       x="342.75"
        y="2248.6096"
        id="text5976"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5978"
-         x="398.75"
+         x="342.75"
          y="2248.6096">slow neutral</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="398.75"
+       x="342.75"
        y="2262.3596"
        id="text5980"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5982"
-         x="398.75"
+         x="342.75"
          y="2262.3596">fast neutral</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="398.75"
+       x="342.75"
        y="2276.1096"
        id="text5984"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5986"
-         x="398.75"
+         x="342.75"
          y="2276.1096">bisse sim real</tspan></text>
     <text
        xml:space="preserve"
@@ -1659,7 +1659,7 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m 82.499992,1946.1096 -20.625,11.9079 0,-23.8157 z"
-       transform="matrix(0,0.29042691,-0.38870249,0,1129.4425,2210.8995)"
+       transform="matrix(0,0.29042691,-0.38870249,0,1197.4425,2210.8995)"
        inkscape:transform-center-y="0.99828435" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.15445566;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"

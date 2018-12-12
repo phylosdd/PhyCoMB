@@ -25,7 +25,7 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9650369"
+     inkscape:zoom="2.7671711"
      inkscape:cx="198.2397"
      inkscape:cy="45.117789"
      inkscape:document-units="px"
@@ -700,7 +700,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -867,7 +867,7 @@
          sodipodi:role="line"
          id="tspan3762"
          x="55"
-         y="1891.1096">Comment</tspan></text>
+         y="1891.1096">Name</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1030,25 +1030,25 @@
     <text
        xml:space="preserve"
        style="color:#000000;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif, Medium';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#204a87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="13.750004"
+       x="7.7500038"
        y="1836.1096"
        id="text5675"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5677"
-         x="13.750004"
+         x="7.7500038"
          y="1836.1096">Task-SDD-test</tspan></text>
     <text
        xml:space="preserve"
        style="color:#000000;font-style:oblique;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10px;line-height:100%;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium Oblique';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       x="96.25"
+       x="90.25"
        y="1836.1096"
        id="text5679"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan5681"
-         x="96.25"
-         y="1836.1096">Is this trait associated with a diversification difference?</tspan></text>
+         x="90.25"
+         y="1836.1096">Discrete trait and lineage diversification: Is there an association?</tspan></text>
   </g>
   <text
      sodipodi:linespacing="100%"
