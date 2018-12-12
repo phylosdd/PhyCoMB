@@ -13,7 +13,7 @@ The contents of the later sections depend on the selections in the earlier secti
 So each section should only appear after selections have been made above it.
 ]_
 
-## Select Task
+## 1. Select Task
 
 Specify the macroevolutionary question of interest, or the "task" that methods will undertake.
 Choose one of the following:
@@ -31,7 +31,7 @@ The Num Methods column should be determined by the number of Methods in the data
 For our practice data, currently only Task-SDD-test is applicable.
 ]_
 
-## Select Methods
+## 2. Select Methods
 
 Specify which methods to focus on.
 Choose one or more of the following:
@@ -51,7 +51,7 @@ The rest of the columns should be filled in from the information about Methods i
 We will definitely want ID and Name, and probably some other columns too, like Model-based, Keywords, or Contributor (see the list of fields in Section 6.7).
 ]_
 
-## Select Elements
+## 3. Select Elements
 
 Specify which testing datasets to include.
 
