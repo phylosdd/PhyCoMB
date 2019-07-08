@@ -22,18 +22,18 @@ There should be a form for a Contributor to create a new \Element.
     \item[Date] When this was created. [auto]
     \item[Contributor] Who created this. [auto]
             Can be filled in automatically because a Contributor must be logged in to add anything new to the database (\cref{sec:users_contributor}).
-    \item[Tree] Link to one \Tree.
-            An existing \Tree could be selected.  (There will be too many Trees to present them all as a list.  Perhaps the Contributor could start to type the Tree's UniqueID or Name and the options could auto-complete.)
-            Or, a new \Tree could be created along with this \Element (see \cref{sec:tables_tree}).
-    \item[Trait] Link to one \Trait, or empty.
-            (Some Tasks may not require a Trait in each Element.  But for our initial tasks, there will always be one.)
-            An existing \Trait could be selected.  (Again, there will be too many Traits to present them all as a list.)
-            Or, a new \Trait could be created along with this \Element (see \cref{sec:tables_trait}).
-            We will need a way to check that the species names agree in a \Trait and \Tree that are part of the same \Element.
     \item[Name] A brief description of the \Element.
             Free text with a maximum of 50 characters.  Might not be unique.
     \item[Comment] Any other text the Contributor would like to provide about the \Element.
             Free text.  Formatting should be preserved.
+    \item[Tree] Link to one \Tree.
+            An existing \Tree could be selected. %  (There will be too many Trees to present them all as a list.  Perhaps the Contributor could start to type the Tree's UniqueID or Name and the options could auto-complete.)
+            Or, a new \Tree could be created along with this \Element (see \cref{sec:tables_tree}).
+    \item[Trait] Link to one \Trait, or empty.
+            (Some Tasks may not require a Trait in each Element.  But for our initial tasks, there will always be one.)
+            An existing \Trait could be selected. %  (Again, there will be too many Traits to present them all as a list.)
+            Or, a new \Trait could be created along with this \Element (see \cref{sec:tables_trait}).
+            We will need a way to check that the species names agree in a \Trait and \Tree that are part of the same \Element.
     \item[Number of items] Positive integer.
             To avoid ambiguity, the Contributor will provide this.
             But the value should be sanity-checked against the number of items in the \Element's \Tree and \Trait.
@@ -68,20 +68,22 @@ Each \Tree object is actually a set of trees, all with the same properties.
     \item[Unique ID] Arbitrary, \eg T-83247. [auto]
     \item[Date] When this was created. [auto]
     \item[Contributor] Who created this. [auto]
-    \item[Number of items] The number of unique trees uploaded. [auto]
-    \item[Number of tips] The number of tips per tree.  Could be a single number or a range. [auto]
     \item[Name] A brief description of the \Tree.
             Free text with a maximum of 50 characters.  Might not be unique.
     \item[Comment] Any other text the Contributor would like to provide about the \Tree.
             Free text.  Formatting should be preserved.
+    \item[Number of items] The number of unique trees uploaded.
+            For safety, have the user provide this but check it against the actual trees.
+    \item[Number of tips] The number of tips per tree.  Could be a single number or a range.
+            For safety, have the user provide this but check it against the actual trees.
     \item[Source] A text file uploaded by the Contributor.
             Usually, this will be a script that generates the tree(s) or downloads them.
-            If that is not possible, the file can contain notes explaining how to get the trees.
+            If that is not possible, the file can contain notes explaining where the trees came from.
     \item[Tree files] Each individual tree is itself stored as a \href{http://evolution.genetics.washington.edu/phylip/newicktree.html}{Newick string}.
             Those strings could reside directly within the database; they can be quite long, though, which might be troublesome.
             Or the database entry could be a link to text file(s) containing the trees; this might be better because such files will frequently be downloaded by users (\cref{sec:downloads_element}).
             The Contributor will provide one text file per tree, so we should allow multiple files or one zipped file to be uploaded.
-            % Or all the trees could be in a single text file, each on a new line.
+            % Or all the trees could be in a single text file, each on a new line.  Or NEXUS allows multiple trees per file, and also with traits.
     \item[Keywords] A list of options, from which the Contributor will choose one or more.
             We will want to be able to search/filter \Trees based on these values.
             The exact keywords will be determined as we go along, but a starting point is:
@@ -115,11 +117,13 @@ All the trait sets within a \Trait have the same properties.
     \item[Unique ID] Arbitrary, \eg A-57387. [auto]
     \item[Date] When this was created. [auto]
     \item[Contributor] Who created this. [auto]
-    % \item[Number of trait sets] Positive integer.  Probably either 1, or one per tree.
     \item[Name] A brief description of the \Trait.
             Free text with a maximum of 50 characters.  Might not be unique.
     \item[Comment] Any other text the Contributor would like to provide about the \Trait.
             Free text.  Formatting should be preserved.
+    \item[Number of items] The number of unique trait sets uploaded.
+            For safety, have the user provide this but check it against the actual files.
+    % \item[Number of trait sets] Positive integer.  Probably either 1, or one per tree.
     \item[Source] A text file uploaded by the Contributor.
             Usually, this will be a script that generates the trait values or downloads them.
             It might be the same as the generating script for a corresponding \Tree.
@@ -228,7 +232,7 @@ Now we consider the analysis methods that the tests are designed to evaluate.
     \item[Task] Choose from the list of existing \Tasks that this \Method is be used for.
             I'm pretty sure that each \Method can only be used for a single \Task, because the \Method can only return a single value.
             The \Task therefore determine the return value type (Boolean or numeric) of the \Method.
-    \item[Analysis script] The code used to run the method.  One or more text files.
+    \item[Source] The analysis script used to run the method.  One or more text files.
     \item[Allied methods] Note any existing \Methods that are very closely related to this one.
             There may be too many \Methods to present them all as a list.  Perhaps the Contributor could start to type the UniqueID or Name and the options could auto-complete.
             (These links will need to be updated automatically, as well.  For example, when I contribute Method 2 today I can note that it is allied with Method 1 that I created yesterday.  But then the link from Method 1 to 2 should be created automatically.)
