@@ -17,6 +17,10 @@ Each \Element consists of one \Tree (\cref{sec:tables_tree}), optionally one \Tr
 There should be a form for a Contributor to create a new \Element.
 % The reason for \Tree and \Trait being separate entities, rather than only parts of \Element, is so they can be reused, \eg same \Tree with different \Traits makes for different \Elements.
 
+To form a valid \Element, the `Number of items' in the \Trait must equal either the `Number of items' in the \Tree (a different trait set for each tree) or one (the same trait set for each tree).
+Additionally, the `Number of tips' in the \Tree must equal the `Number of taxa' in the \Trait.
+We will also need to check that the species names agree in a \Trait and \Tree that are part of the same \Element.
+
 \begin{description}
     \item[Unique ID] Arbitrary, \eg E-47295. [auto]
     \item[Date] When this was created. [auto]
@@ -33,7 +37,6 @@ There should be a form for a Contributor to create a new \Element.
             (Some Tasks may not require a Trait in each Element.  But for our initial tasks, there will always be one.)
             An existing \Trait could be selected. %  (Again, there will be too many Traits to present them all as a list.)
             Or, a new \Trait could be created along with this \Element (see \cref{sec:tables_trait}).
-            We will need a way to check that the species names agree in a \Trait and \Tree that are part of the same \Element.
     \item[Number of items] Positive integer.
             To avoid ambiguity, the Contributor will provide this.
             But the value should be sanity-checked against the number of items in the \Element's \Tree and \Trait.
@@ -73,9 +76,10 @@ Each \Tree object is actually a set of trees, all with the same properties.
     \item[Comment] Any other text the Contributor would like to provide about the \Tree.
             Free text.  Formatting should be preserved.
     \item[Number of items] The number of unique trees uploaded.
-            For safety, have the user provide this but check it against the actual trees.
-    \item[Number of tips] The number of tips per tree.  Could be a single number or a range.
-            For safety, have the user provide this but check it against the actual trees.
+            For safety, have the user provide this but check it against the tree files provided.
+    \item[Number of tips] The number of tips per tree.
+            Could be a single number if all trees are the same size, or a list of the number of tips on each tree.
+            Can be obtained automatically from the tree files.
     \item[Source] A text file uploaded by the Contributor.
             Usually, this will be a script that generates the tree(s) or downloads them.
             If that is not possible, the file can contain notes explaining where the trees came from.
@@ -111,7 +115,7 @@ There could be multiple such sets in one \Trait object, \eg when simulating data
 % A \Trait isn't useful on its own---it only makes sense when associated with a \Tree.
 % A \Trait will usually only correspond to one \Tree, but that's not required.
 % For example, if empirical data are used to make different \Trees with different phylogenetic inference methods, we would have many \Trees and one \Trait.
-All the trait sets within a \Trait have the same properties.
+All the trait sets within a \Trait have the same properties, except for possibly the number of taxa.
 
 \begin{description}
     \item[Unique ID] Arbitrary, \eg A-57387. [auto]
@@ -122,8 +126,13 @@ All the trait sets within a \Trait have the same properties.
     \item[Comment] Any other text the Contributor would like to provide about the \Trait.
             Free text.  Formatting should be preserved.
     \item[Number of items] The number of unique trait sets uploaded.
+            This will often be one, with the same traits applying to all trees.
+            Or it can be more than one, with a different set applying to each tree.
             For safety, have the user provide this but check it against the actual files.
-    % \item[Number of trait sets] Positive integer.  Probably either 1, or one per tree.
+    \item[Number of taxa]
+            The number of species in each trait set.
+            Could be a single number if it is the same for all trait sets, or a list of the number of species in each set.
+            Can be obtained automatically from the trait files.
     \item[Source] A text file uploaded by the Contributor.
             Usually, this will be a script that generates the trait values or downloads them.
             It might be the same as the generating script for a corresponding \Tree.
