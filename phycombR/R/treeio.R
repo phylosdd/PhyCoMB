@@ -119,5 +119,6 @@ assemble_element <- function(treelabel, traitlabel)
             r3 <- FALSE
         }
     }
+
     return(all(r2, r3, r3))
 }

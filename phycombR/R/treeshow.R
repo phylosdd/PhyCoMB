@@ -1,7 +1,7 @@
 ### Not part of the package yet! ###
 
 #' Visualize a tree.
-show.tree <- function(phy, title = NA, states = c(0, 1), adj = c(0.5, 0.5), 
+show_tree <- function(phy, title = NA, states = c(0, 1), adj = c(0.5, 0.5), 
                       tip.colors = c("#440154FF", "#35B779FF"))
 {
     if ("hist" %in% attributes(phy)$names)
@@ -22,7 +22,7 @@ show.tree <- function(phy, title = NA, states = c(0, 1), adj = c(0.5, 0.5),
 }
 
 #' Print each tree to a page of a pdf file.
-plot.trees <- function(phy.all, filename = "trees.pdf", 
+plot_trees <- function(phy.all, filename = "trees.pdf", 
                        states = c(0, 1), adj = c(1,0.5))
 {
     pdf(filename, width=8.5, height=11)
